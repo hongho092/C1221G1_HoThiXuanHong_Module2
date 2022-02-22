@@ -22,9 +22,11 @@ public class DeleteIndex {
         for (int i=0; i< arr.length; i++) {
             if (num == arr[i]) {
                 arr[i] = arr[i+1];
-                continue;
             }
-            System.out.println(arr[i]);
+        }
+        arr[arr.length-1] =0;
+        for (int x:arr) {
+            System.out.println(x);
         }
     }
 }

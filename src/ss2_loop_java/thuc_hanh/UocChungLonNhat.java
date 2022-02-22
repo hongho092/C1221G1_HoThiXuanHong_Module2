@@ -2,7 +2,7 @@ package ss2_loop_java.thuc_hanh;
 
 import java.util.Scanner;
 
-public class UocChungMax {
+public class UocChungLonNhat {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a:");
