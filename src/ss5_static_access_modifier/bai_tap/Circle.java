@@ -1,7 +1,7 @@
 package ss5_static_access_modifier.bai_tap;
 
 public class Circle {
-    public double radius = 1.0;
+    protected double radius = 1.0;
     public static String color = "red";
 
     Circle () {
