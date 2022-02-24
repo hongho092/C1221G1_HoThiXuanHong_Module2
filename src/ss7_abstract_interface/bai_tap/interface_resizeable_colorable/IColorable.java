@@ -1,5 +1,5 @@
 package ss7_abstract_interface.bai_tap.interface_resizeable_colorable;
 
-public interface Colorable {
+public interface IColorable {
     void howToColor ();
 }

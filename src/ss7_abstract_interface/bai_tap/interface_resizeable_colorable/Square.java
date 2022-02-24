@@ -1,6 +1,6 @@
 package ss7_abstract_interface.bai_tap.interface_resizeable_colorable;
 
-public class Square extends Shape implements Colorable{
+public class Square extends Shape implements IColorable {
     private double side = 2.0;
     public Square(){}
 

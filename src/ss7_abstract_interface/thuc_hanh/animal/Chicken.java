@@ -1,6 +1,6 @@
 package ss7_abstract_interface.thuc_hanh.animal;
 
-    public class Chicken extends Animal implements Edible  {
+    public class Chicken extends Animal implements IEdible {
         public Chicken() {
         }
 
