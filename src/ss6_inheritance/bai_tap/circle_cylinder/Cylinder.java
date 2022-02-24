@@ -16,7 +16,11 @@ public class Cylinder extends Circle {
     }
 
     public double getArea() {
-        return Math.pow(radius,2) * Math.PI * height;
+        return 2*Math.PI * radius * height;
+    }
+
+    public double getVolume() {
+        return Math.PI * Math.pow(radius, 2) * height;
     }
 
     @Override

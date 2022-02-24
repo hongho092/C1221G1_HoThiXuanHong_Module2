@@ -44,6 +44,12 @@ public class Triangle extends Shape {
         return side1 + side2 + side3;
     }
 
+    protected double getArea() {
+        double per = side1 + side2 + side3;
+        double p = per / 2;
+        return Math.sqrt(p*(p-side1)*(p-side2)*(p-side3));
+    }
+
     @Override
     public String toString() {
         return "A Triangle with{" +
@@ -53,6 +59,7 @@ public class Triangle extends Shape {
                 ", color=" + color +
                 (isFilled() ?", filled" :", not filled") +
                 ", perimeter=" + getPerimeter() +
+                ", area=" + getArea()+
                 '}';
     }
 }

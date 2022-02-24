@@ -8,10 +8,11 @@ public class TestTriangle {
         tri.setColor("red");
         tri.setSide2(4.5);
         System.out.println("After changed -> "+tri);
-        System.out.println(" ");
-        Triangle tri1 = new Triangle(3, 4, 5);
-        tri = tri1;
-        System.out.println(tri1);
+////        System.out.println(" ");
+//        Triangle tri1 = new Triangle(3, 4, 5);
+////        tri = tri1;
+//        System.out.println(tri1);
+////        System.out.println(tri1.getArea());
 
     }
 }
