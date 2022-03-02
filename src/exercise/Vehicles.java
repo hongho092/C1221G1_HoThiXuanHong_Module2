@@ -59,12 +59,4 @@ public abstract class Vehicles {
                 ", chuSoHuu='" + chuSoHuu + '\'' +
                 '}';
     }
-
-    public String showHangSanXuat() {
-        return "Yamaha, Honda, Dongfeng, Huyndai, Ford, Toyota, Hino ";
-    }
-
-    public abstract Car addVehicle();
-
-
 }

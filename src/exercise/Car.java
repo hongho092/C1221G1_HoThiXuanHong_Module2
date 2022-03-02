@@ -33,24 +33,22 @@ public class Car extends Vehicles {
     public String toString() {
         return "Car{" +
                 "soChoNgoi=" + soChoNgoi +
-                ", kieuXe='" + kieuXe + '\'' +super.toString()+
+                ", kieuXe='" + kieuXe +", " +super.toString()+
                 '}';
     }
 
-    @Override
-    public Car addVehicle() {
-        System.out.println("Nhập biển kiểm soát: ");
+    public Car addCar() {
+        System.out.print("Nhập biển kiểm soát: ");
         bienKiemSoat = sca.nextLine();
-        System.out.println("Chọn và nhập hãng sản xuất: ");
-        showHangSanXuat();
+        System.out.print("Nhập hãng sản xuất: ");
         hangSanXuat = sca.nextLine();
-        System.out.println("Nhập năm sản xuất: ");
+        System.out.print("Nhập năm sản xuất: ");
         namSanXuat = Integer.parseInt(sca.nextLine());
-        System.out.println("Nhập chủ sở hữu: ");
+        System.out.print("Nhập chủ sở hữu: ");
         chuSoHuu = sca.nextLine();
-        System.out.println("Nhập kiểu xe: ");
+        System.out.print("Nhập kiểu xe: ");
         kieuXe = sca.nextLine();
-        System.out.println("Nhập số chỗ ngồi: ");
+        System.out.print("Nhập số chỗ ngồi: ");
         soChoNgoi = Integer.parseInt(sca.nextLine());
         Car car = new Car(bienKiemSoat, hangSanXuat, namSanXuat, chuSoHuu, soChoNgoi, kieuXe);
         return car;

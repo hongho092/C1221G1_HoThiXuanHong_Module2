@@ -37,28 +37,57 @@ public class VehiclesTest {
                     int choice1 = sca.nextInt();
                     switch (choice1) {
                         case 1:
-                            Motorbike motorbike = new Motorbike().addVehicle();
-                            motorbikes.add(motorbike);
+                            Truck truck = new Truck().addTruck();
+                            trucks.add(truck);
                             System.out.println("OK, đã thêm xe tải\n"+ cars);
                             break;
                         case 2:
-                            Car car = new Car().addVehicle();
+                            Car car = new Car().addCar();
                             cars.add(car);
                             System.out.println("OK, đã thêm oto\n"+ motorbikes);
                             break;
                         case 3:
+                            Motorbike motorbike = new Motorbike().addMotorbike();
+                            motorbikes.add(motorbike);
                             System.out.println("OK, đã thêm xe máy");
                             break;
                     }
                     out = false;
                     break;
                 case 2:
+                    System.out.println("Bạn muốn hiển thị:\n" +
+                            "1. Xe tải,\n" +
+                            "2. Xe ôtô, \n" +
+                            "3. Xe máy.\n"+
+                            "Nhập yêu cầu của bạn: ");
+                    int choice2 = sca.nextInt();
+                    switch (choice2) {
+                        case 1:
+                            for (Truck truck:trucks) {
+                                System.out.println(truck);
+                            }
+                            break;
+                        case 2:
+                            for (Car car:cars) {
+                                System.out.println(car);
+                            }
+                            break;
+                        case 3:
+                            for (Motorbike motorbike:motorbikes) {
+                                System.out.println(motorbike);
+                            }
+                            break;
+                    }
                     System.out.println("hien thi");
                     out = false;
                     break;
                 case 3:
-                    System.out.println("xoa");
-                    out = false;
+                    System.out.println("Nhập biển kiểm soát: ");
+                    String bKS = sca.nextLine();
+//                    for (int i=0; i< trucks.size(); i++) {
+//                        for(int j=0; j<trucks[i].)
+//                    }
+//                    out = false;
                     break;
                 default:
                     System.out.println("da out");

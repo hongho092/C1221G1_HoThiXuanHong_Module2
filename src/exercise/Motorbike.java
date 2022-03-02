@@ -22,25 +22,23 @@ public class Motorbike extends Vehicles{
     @Override
     public String toString() {
         return "Motorbike{" +
-                "congSuat=" + congSuat + super.toString()+
+                "congSuat=" + congSuat +", "+ super.toString()+
                 '}';
     }
 
-    @Override
-    public Car addVehicle() {
-        System.out.println("Nhập biển kiểm soát: ");
+    public Motorbike addMotorbike() {
+        System.out.print("Nhập biển kiểm soát: ");
         bienKiemSoat = sca.nextLine();
-        System.out.println("Chọn và nhập hãng sản xuất: ");
-        showHangSanXuat();
+        System.out.print("Nhập hãng sản xuất: ");
         hangSanXuat = sca.nextLine();
-        System.out.println("Nhập năm sản xuất: ");
+        System.out.print("Nhập năm sản xuất: ");
         namSanXuat = Integer.parseInt(sca.nextLine());
-        System.out.println("Nhập chủ sở hữu: ");
+        System.out.print("Nhập chủ sở hữu: ");
         chuSoHuu = sca.nextLine();
-        System.out.println("Nhập công suất: ");
+        System.out.print("Nhập công suất: ");
         congSuat = Integer.parseInt(sca.nextLine());
         Motorbike motorbike = new Motorbike(bienKiemSoat, hangSanXuat, namSanXuat, chuSoHuu, congSuat);
-        return Motorbike;
+        return motorbike;
     }
 
 
