@@ -29,7 +29,7 @@ public class VehiclesTest {
             int choice = sca.nextInt();
             switch (choice) {
                 case 1:
-                    System.out.println("Bạn muốn thêm:\n" +
+                    System.out.print("Bạn muốn thêm:\n" +
                             "1. Thêm xe tải,\n" +
                             "2. Thêm ôtô, \n" +
                             "3. Thêm xe máy.\n"+
@@ -55,7 +55,7 @@ public class VehiclesTest {
                     out = false;
                     break;
                 case 2:
-                    System.out.println("Bạn muốn hiển thị:\n" +
+                    System.out.print("Bạn muốn hiển thị:\n" +
                             "1. Xe tải,\n" +
                             "2. Xe ôtô, \n" +
                             "3. Xe máy.\n"+
@@ -78,19 +78,55 @@ public class VehiclesTest {
                             }
                             break;
                     }
-                    System.out.println("hien thi");
                     out = false;
                     break;
                 case 3:
                     System.out.println("Nhập biển kiểm soát: ");
-                    String bKS = sca.nextLine();
-//                    for (int i=0; i< trucks.size(); i++) {
-//                        for(int j=0; j<trucks[i].)
-//                    }
-//                    out = false;
+                    String xeMuonXoa = sca.nextLine();
+                    for (int i=0; i<trucks.size(); i++) {
+                        if (trucks.get(i).getBienKiemSoat().equals(xeMuonXoa)) {
+                            System.out.print("Bạn có chắc chắn muốn xóa không ->");
+                            String choice3 = sca.nextLine();
+                            if (choice3.equals("yes")) {
+                                trucks.remove(i);
+                                System.out.println("Đã xóa thành công");
+                            } else if (choice3.equals("no")) {
+                                break;
+                            }
+                        } else
+                            break;
+                    }
+
+                    for (int i=0; i<cars.size(); i++) {
+                        if (cars.get(i).getBienKiemSoat().equals(xeMuonXoa)) {
+                            System.out.print("Bạn có chắc chắn muốn xóa không ->");
+                            String choice3 = sca.nextLine();
+                            if (choice3.equals("yes")) {
+                                cars.remove(i);
+                                System.out.println("Đã xóa thành công");
+                            } else if (choice3.equals("no")) {
+                                break;
+                            }
+                        }else
+                            break;
+                    }
+
+                    for (int i=0; i<motorbikes.size(); i++) {
+                        if (motorbikes.get(i).getBienKiemSoat().equals(xeMuonXoa)) {
+                            System.out.print("Bạn có chắc chắn muốn xóa không ->");
+                            String choice3 = sca.nextLine();
+                            if (choice3.equals("yes")) {
+                                motorbikes.remove(i);
+                                System.out.println("Đã xóa thành công");
+                            } else if (choice3.equals("no")) {
+                                break;
+                            }
+                        }else
+                            break;
+                    }
                     break;
                 default:
-                    System.out.println("da out");
+                    System.out.println("Hoàn tất nhiệm vụ");
                     out = true;
             }
 
