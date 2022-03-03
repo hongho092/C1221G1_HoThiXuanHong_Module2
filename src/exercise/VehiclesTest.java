@@ -1,22 +1,25 @@
 package exercise;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class VehiclesTest {
+    private static ArrayList<Car> cars = new ArrayList<>();
+    private static ArrayList<Motorbike> motorbikes = new ArrayList<>();
+    private static  ArrayList<Truck> trucks = new ArrayList<>();
+    static {
+        cars.add(new Car("43A-212.56", "Toyota", 2019, "Nguyễn Văn A", 5, "Du lịch"));
+        cars.add(new Car("43B-453.88", "Huyndai", 2020, "Nguyễn Văn B", 45, "Xe khách"));
+        cars.add(new Car("43B-453.89", "Ford", 2020, "Nguyễn Văn C", 16, "Xe khách"));
+        motorbikes.add(new Motorbike("43-K1-678.56", "Yamaha", 2019, "Nguyễn Văn A", 100 ));
+        motorbikes.add(new Motorbike("43-H1-345.89", "Honda", 2019, "Nguyễn Văn B", 150 ));
+        motorbikes.add(new Motorbike("43-AK-765.23", "Yamaha", 2019, "Nguyễn Văn C", 50 ));
+        trucks.add(new Truck("43C-012.34", "Huyndai", 2019, "Nguyễn Văn A",  3));
+        trucks.add(new Truck("43C-47.678", "Dongfeng", 2020, "Nguyễn Văn B",  9));
+        trucks.add(new Truck("43C-45.235", "Hino", 2021, "Nguyễn Văn C",  12));
+    }
 
     public static void main(String[] args) {
-        ArrayList<Car> cars = new ArrayList<>();
-        ArrayList<Motorbike> motorbikes = new ArrayList<>();
-        ArrayList<Truck> trucks = new ArrayList<>();
-////         bienKiemSoat, String hangSanXuat, int namSanXuat, String chuSoHuu, int soChoNgoi, String kieuXe
-//        Car car1 = new Car("hgfjfn", "fbdhfbi", 3452, "34523", 5, "7855");
-//        cars.add(car1);
-//        System.out.println(car1.showHangSanXuat());
-//        System.out.println(cars);
-//        ArrayList<Motorbike> motorbikes = new ArrayList<>();
-//        ArrayList<Truck> truck = new ArrayList<>();
         Scanner sca = new Scanner(System.in);
         boolean out = false;
         while (!out) {
@@ -26,7 +29,7 @@ public class VehiclesTest {
                     "3. Xóa phương tiện\n" +
                     "4. Thoát\n" +
                     "Nhập yêu cầu của bạn: ");
-            int choice = sca.nextInt();
+            int choice = Integer.parseInt(sca.nextLine());
             switch (choice) {
                 case 1:
                     System.out.print("Bạn muốn thêm:\n" +
@@ -34,7 +37,7 @@ public class VehiclesTest {
                             "2. Thêm ôtô, \n" +
                             "3. Thêm xe máy.\n"+
                             "Nhập yêu cầu của bạn: ");
-                    int choice1 = sca.nextInt();
+                    int choice1 = Integer.parseInt(sca.nextLine());
                     switch (choice1) {
                         case 1:
                             Truck truck = new Truck().addTruck();
@@ -56,11 +59,11 @@ public class VehiclesTest {
                     break;
                 case 2:
                     System.out.print("Bạn muốn hiển thị:\n" +
-                            "1. Xe tải,\n" +
-                            "2. Xe ôtô, \n" +
-                            "3. Xe máy.\n"+
+                            "1. Xe tải \n" +
+                            "2. Xe ôtô \n" +
+                            "3. Xe máy \n"+
                             "Nhập yêu cầu của bạn: ");
-                    int choice2 = sca.nextInt();
+                    int choice2 = Integer.parseInt(sca.nextLine());
                     switch (choice2) {
                         case 1:
                             for (Truck truck:trucks) {
@@ -129,8 +132,6 @@ public class VehiclesTest {
                     System.out.println("Hoàn tất nhiệm vụ");
                     out = true;
             }
-
         }
-
     }
 }

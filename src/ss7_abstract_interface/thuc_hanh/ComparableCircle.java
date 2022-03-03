@@ -21,4 +21,7 @@ public class ComparableCircle extends Circle implements Comparable<ComparableCir
         else return 1;
     }
 
+    // comparable sử dụng ngay tại lớp của đối tượng
+    // comparator muốn sử dụng phải tạo lớp khác rồi implement nó
+
 }

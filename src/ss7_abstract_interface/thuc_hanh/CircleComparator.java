@@ -14,3 +14,5 @@ public class CircleComparator implements Comparator<Circle> {
         else return 0;
     }
 }
+        // comparable sử dụng ngay tại lớp của đối tượng
+        // comparator muốn sử dụng phải tạo lớp khác rồi implement nó
