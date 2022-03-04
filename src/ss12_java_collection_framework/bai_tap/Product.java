@@ -1,6 +1,6 @@
 package ss12_java_collection_framework.bai_tap;
 
-public class Product {
+public class Product { // MVC - model
     protected int id;
     protected String nameProduct;
     protected int price;

@@ -3,7 +3,6 @@ package exercise;
 import java.util.Scanner;
 
 public abstract class Vehicles {
-    Scanner sca = new Scanner(System.in);
     protected String bienKiemSoat;
     protected String hangSanXuat;
     protected int namSanXuat;

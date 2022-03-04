@@ -1,7 +1,7 @@
 package exercise;
 
 public class Motorbike extends Vehicles{
-    private int congSuat;
+    protected  int congSuat;
 
     public Motorbike() {
     }
@@ -25,21 +25,5 @@ public class Motorbike extends Vehicles{
                 "congSuat=" + congSuat +", "+ super.toString()+
                 '}';
     }
-
-    public Motorbike addMotorbike() {
-        System.out.print("Nhập biển kiểm soát: ");
-        bienKiemSoat = sca.nextLine();
-        System.out.print("Nhập hãng sản xuất: ");
-        hangSanXuat = sca.nextLine();
-        System.out.print("Nhập năm sản xuất: ");
-        namSanXuat = Integer.parseInt(sca.nextLine());
-        System.out.print("Nhập chủ sở hữu: ");
-        chuSoHuu = sca.nextLine();
-        System.out.print("Nhập công suất: ");
-        congSuat = Integer.parseInt(sca.nextLine());
-        Motorbike motorbike = new Motorbike(bienKiemSoat, hangSanXuat, namSanXuat, chuSoHuu, congSuat);
-        return motorbike;
-    }
-
 
 }

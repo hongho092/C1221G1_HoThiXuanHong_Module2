@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
-public class ProductManager {
+public class ProductManager {  // MVC - Controller
     Scanner scanner = new Scanner(System.in);
     private static ArrayList<Product> products = new ArrayList<>();
     static {

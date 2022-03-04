@@ -2,7 +2,7 @@ package ss12_java_collection_framework.bai_tap;
 
 import java.util.Scanner;
 
-public class ProductTest {
+public class ProductTest {  // MVC - view
     static ProductManager productManager = new ProductManager();
 
     public static void main(String[] args) {

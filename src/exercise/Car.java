@@ -1,8 +1,8 @@
 package exercise;
 
 public class Car extends Vehicles {
-    private int soChoNgoi;
-    private String kieuXe;
+    protected int soChoNgoi;
+    protected String kieuXe;
 
     public Car () {
     }
@@ -37,21 +37,21 @@ public class Car extends Vehicles {
                 '}';
     }
 
-    public Car addCar() {
-        System.out.print("Nhập biển kiểm soát: ");
-        bienKiemSoat = sca.nextLine();
-        System.out.print("Nhập hãng sản xuất: ");
-        hangSanXuat = sca.nextLine();
-        System.out.print("Nhập năm sản xuất: ");
-        namSanXuat = Integer.parseInt(sca.nextLine());
-        System.out.print("Nhập chủ sở hữu: ");
-        chuSoHuu = sca.nextLine();
-        System.out.print("Nhập kiểu xe: ");
-        kieuXe = sca.nextLine();
-        System.out.print("Nhập số chỗ ngồi: ");
-        soChoNgoi = Integer.parseInt(sca.nextLine());
-        Car car = new Car(bienKiemSoat, hangSanXuat, namSanXuat, chuSoHuu, soChoNgoi, kieuXe);
-        return car;
-    }
+//    public Car addCar() {
+//        System.out.print("Nhập biển kiểm soát: ");
+//        bienKiemSoat = sca.nextLine();
+//        System.out.print("Nhập hãng sản xuất: ");
+//        hangSanXuat = sca.nextLine();
+//        System.out.print("Nhập năm sản xuất: ");
+//        namSanXuat = Integer.parseInt(sca.nextLine());
+//        System.out.print("Nhập chủ sở hữu: ");
+//        chuSoHuu = sca.nextLine();
+//        System.out.print("Nhập kiểu xe: ");
+//        kieuXe = sca.nextLine();
+//        System.out.print("Nhập số chỗ ngồi: ");
+//        soChoNgoi = Integer.parseInt(sca.nextLine());
+//        Car car = new Car(bienKiemSoat, hangSanXuat, namSanXuat, chuSoHuu, soChoNgoi, kieuXe);
+//        return car;
+//    }
 
 }

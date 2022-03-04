@@ -1,7 +1,7 @@
 package exercise;
 
 public class Truck extends Vehicles{
-    private int trongTai;
+    protected int trongTai;
 
     public Truck() {
     }
@@ -24,20 +24,5 @@ public class Truck extends Vehicles{
         return "Truck{" +
                 "trongTai=" + trongTai+", " +super.toString()+
                 '}';
-    }
-
-    public Truck addTruck() {
-        System.out.print("Nhập biển kiểm soát: ");
-        bienKiemSoat = sca.nextLine();
-        System.out.print("Nhập hãng sản xuất: ");
-        hangSanXuat = sca.nextLine();
-        System.out.print("Nhập năm sản xuất: ");
-        namSanXuat = Integer.parseInt(sca.nextLine());
-        System.out.print("Nhập chủ sở hữu: ");
-        chuSoHuu = sca.nextLine();
-        System.out.print("Nhập tải trọng: ");
-        trongTai = Integer.parseInt(sca.nextLine());
-        Truck truck = new Truck(bienKiemSoat, hangSanXuat, namSanXuat, chuSoHuu, trongTai);
-        return truck;
     }
 }
