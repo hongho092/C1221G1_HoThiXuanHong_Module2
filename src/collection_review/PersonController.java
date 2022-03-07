@@ -5,6 +5,10 @@ import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 import java.util.Scanner;
 
 public class PersonController {
+
+    public static void PersonCommon () {
+        Experience experience = new Experience();
+    }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         PersonManager personManager = new PersonManager();
@@ -33,13 +37,13 @@ public class PersonController {
                         experience.setId(Integer.parseInt(scanner.nextLine()));
                         experience.setFirstName(scanner.nextLine());
                         experience.setLastName(scanner.nextLine());
-//                        experience.setBirthDate(Integer.parseInt(scanner.nextLine()));
-//                        experience.setAddress(scanner.nextLine());
-//                        experience.setPhone(Integer.parseInt(scanner.nextLine()));
-//                        experience.setEmail(scanner.nextLine());
-//                        experience.setCandidate(Integer.parseInt(scanner.nextLine()));
-//                        experience.setExpInYear(Integer.parseInt(scanner.nextLine()));
-//                        experience.setProSkill(scanner.nextLine());
+                        experience.setBirthDate(Integer.parseInt(scanner.nextLine()));
+                        experience.setAddress(scanner.nextLine());
+                        experience.setPhone(Integer.parseInt(scanner.nextLine()));
+                        experience.setEmail(scanner.nextLine());
+                        experience.setCandidate(Integer.parseInt(scanner.nextLine()));
+                        experience.setExpInYear(Integer.parseInt(scanner.nextLine()));
+                        experience.setProSkill(scanner.nextLine());
                         personManager.addExperience(experience);
                         System.out.print("Do you want to continue? (y=yes) -> ");
                         ans = scanner.nextLine();

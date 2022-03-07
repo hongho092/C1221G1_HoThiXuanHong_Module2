@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1593def3-4b44-4a2a-95e5-b2f439e830ae" name="Changes" comment="">
+    <list default="true" id="d978e24f-9299-450d-ae3c-60753e642baf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ss1_introduction_to_java/bai_tap/ReadNumber.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss1_introduction_to_java/thuc_hanh/KhaiBao_SuDungBien.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss2_loop_java/bai_tap/HienThiHinh.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/ss2_loop_java/bai_tap/HienThiHinh.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss2_loop_java/thuc_hanh/UocChungMax.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss3_array_method_in_java/bai_tap/AddIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/ss3_array_method_in_java/bai_tap/AddIndex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss3_array_method_in_java/bai_tap/DeleteIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/ss3_array_method_in_java/bai_tap/DeleteIndex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/module 2/ss3_array_method_in_java/bai_tap/FindMin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/module 2/ss3_array_method_in_java/bai_tap/FindMin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collection_review/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/collection_review/PersonController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,30 +26,30 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="25MpLH9cPq7IVZkBWVHofkJkK8p" />
+  <component name="ProjectId" id="25rkjAcQsKH89DrstGq4NLSy7fE" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../caseStudy" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
   </component>
-  <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="ss3_array_method_in_java.bai_tap" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Application.Fan">
-    <configuration name="Fan" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss4_oop_in_java.bai_tap.Fan" />
+  <component name="RunManager" selected="Application.InsertionSortByStep">
+    <configuration name="BubbleSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss14_sort_algorithm.thuc_hanh.BubbleSort" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss4_oop_in_java.bai_tap.*" />
+          <option name="PATTERN" value="ss14_sort_algorithm.thuc_hanh.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -52,12 +57,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QuadraticEquation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss4_oop_in_java.bai_tap.QuadraticEquation" />
+    <configuration name="BubbleSortByStep" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss14_sort_algorithm.thuc_hanh.BubbleSortByStep" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss4_oop_in_java.bai_tap.*" />
+          <option name="PATTERN" value="ss14_sort_algorithm.thuc_hanh.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -65,12 +70,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Rectangle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss4_oop_in_java.thuc_hanh.Rectangle" />
+    <configuration name="InsertionSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss14_sort_algorithm.bai_tap.InsertionSort" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss4_oop_in_java.thuc_hanh.*" />
+          <option name="PATTERN" value="ss14_sort_algorithm.bai_tap.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -78,12 +83,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StopWatch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss4_oop_in_java.bai_tap.StopWatch" />
+    <configuration name="InsertionSortByStep" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss14_sort_algorithm.bai_tap.InsertionSortByStep" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss4_oop_in_java.bai_tap.*" />
+          <option name="PATTERN" value="ss14_sort_algorithm.bai_tap.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -91,12 +96,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SystemTime" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss1_introduction_to_java.thuc_hanh.SystemTime" />
+    <configuration name="SelectionSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss14_sort_algorithm.thuc_hanh.SelectionSort" />
       <module name="module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss1_introduction_to_java.thuc_hanh.*" />
+          <option name="PATTERN" value="ss14_sort_algorithm.thuc_hanh.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -106,25 +111,29 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Fan" />
-        <item itemvalue="Application.StopWatch" />
-        <item itemvalue="Application.SystemTime" />
-        <item itemvalue="Application.QuadraticEquation" />
-        <item itemvalue="Application.Rectangle" />
+        <item itemvalue="Application.InsertionSortByStep" />
+        <item itemvalue="Application.InsertionSort" />
+        <item itemvalue="Application.SelectionSort" />
+        <item itemvalue="Application.BubbleSortByStep" />
+        <item itemvalue="Application.BubbleSort" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1593def3-4b44-4a2a-95e5-b2f439e830ae" name="Changes" comment="" />
-      <created>1645346758416</created>
+      <changelist id="d978e24f-9299-450d-ae3c-60753e642baf" name="Changes" comment="" />
+      <created>1646292729177</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1645346758416</updated>
-      <workItem from="1645346760622" duration="2659000" />
-      <workItem from="1645368790540" duration="3933000" />
-      <workItem from="1645418651492" duration="10231000" />
+      <updated>1646292729177</updated>
+      <workItem from="1646292732719" duration="1317000" />
+      <workItem from="1646357231174" duration="5488000" />
+      <workItem from="1646376229738" duration="2654000" />
+      <workItem from="1646493581365" duration="12408000" />
+      <workItem from="1646575241776" duration="7210000" />
+      <workItem from="1646638048719" duration="1580000" />
+      <workItem from="1646663584141" duration="1052000" />
     </task>
     <servers />
   </component>
