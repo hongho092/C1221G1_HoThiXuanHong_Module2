@@ -15,20 +15,16 @@ public class CheckTriangle {
     public static void main(String args[]){
         Scanner scanner = new Scanner(System.in);
         CheckTriangle check = new CheckTriangle();
-        int a = 0;
-        int b = 0;
-        int c = 0;
         do {
             try {
                 System.out.print("Nhập vào cạnh a: ");
-                a = Integer.parseInt(scanner.nextLine());
+                int a = Integer.parseInt(scanner.nextLine());
 
                 System.out.print("Nhập vào cạnh b: ");
-                b = Integer.parseInt(scanner.nextLine());
+                int b = Integer.parseInt(scanner.nextLine());
 
                 System.out.print("Nhập vào cạnh c: ");
-                c = Integer.parseInt(scanner.nextLine());
-
+                int c = Integer.parseInt(scanner.nextLine());
                 try {
                     check.triangleCheck(a,b,c);
                     break;
@@ -38,7 +34,6 @@ public class CheckTriangle {
                     }else{
                         System.out.println(illegalTriangleException.getMessage2());
                     }
-
                 }
             }catch (NumberFormatException num) {
                 System.out.println("NumberFormatException : Vui lòng nhập số.!!!");

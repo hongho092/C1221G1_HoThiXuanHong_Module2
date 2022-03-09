@@ -7,18 +7,9 @@ public class IllegalTriangleException extends Throwable {
         this.a = a;
     }
 
-    public IllegalTriangleException(String message) {
-        super(message);
-    }
-
     public int getA() {
         return a;
     }
-
-    public void setA(int a) {
-        this.a = a;
-    }
-
 
     @Override
     public String getMessage() {
