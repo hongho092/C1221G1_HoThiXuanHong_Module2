@@ -1,16 +1,28 @@
 package try_1;
 
-public class try1 {
-    public static void main(String[] args) {
+import java.io.CharArrayReader;
+import java.io.IOException;
 
-        try {
-            int x = 0;
-            int y = 5 / x;
-        }catch (ArithmeticException e) {
-            System.out.println("Arithmetic");
-        }catch (Exception ae) {
-            System.out.println("Exception");
+public class try1 {
+    public static void main(String[] args)
+    {
+        String obj  = "abcdef";
+        int length = obj.length();
+        char c[] = new char[length];
+        obj.getChars(0, length, c, 0);
+        CharArrayReader input1 = new CharArrayReader(c);
+        CharArrayReader input2 = new CharArrayReader(c, 0, 3);
+        int i;
+        try
+        {
+            while((i = input2.read()) != -1)
+            {
+                System.out.print((char)i);
+            }
         }
-        System.out.println("finished");
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 }
