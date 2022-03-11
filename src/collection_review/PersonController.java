@@ -6,12 +6,12 @@ import java.util.Scanner;
 
 public class PersonController {
 
-    public static void PersonCommon () {
-        Experience experience = new Experience();
-    }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         PersonManager personManager = new PersonManager();
+        Intern intern = new Intern();
+        Experience experience = new Experience();
+        Fresher fresher = new Fresher();
 
         boolean out = false;
         while (!out) { // chạy cho đến khi nào khác out thì sẽ không chạy nữa.
@@ -31,17 +31,9 @@ public class PersonController {
                 case 1:
                     String ans;
                     do {
-                        Experience experience = new Experience();
                         System.out.println("We will start to create Experience Candidate.\n" +
                                 "Enter id, firstName, lastName, birthDate, address, phone, email, candidate, expInYear, proSkill: ");
-                        experience.setId(Integer.parseInt(scanner.nextLine()));
-                        experience.setFirstName(scanner.nextLine());
-                        experience.setLastName(scanner.nextLine());
-                        experience.setBirthDate(Integer.parseInt(scanner.nextLine()));
-                        experience.setAddress(scanner.nextLine());
-                        experience.setPhone(Integer.parseInt(scanner.nextLine()));
-                        experience.setEmail(scanner.nextLine());
-                        experience.setCandidate(Integer.parseInt(scanner.nextLine()));
+                        personManager.personCommon(experience);
                         experience.setExpInYear(Integer.parseInt(scanner.nextLine()));
                         experience.setProSkill(scanner.nextLine());
                         personManager.addExperience(experience);
@@ -53,17 +45,9 @@ public class PersonController {
                     break;
                 case 2:
                     do {
-                        Fresher fresher = new Fresher();
                         System.out.println("We will start to create Fresher Candidate.\n" +
                                 "Enter id, firstName, lastName, birthDate, address, phone, email, candidate, graduationDate, graduationRank, education: ");
-                        fresher.setId(Integer.parseInt(scanner.nextLine()));
-                        fresher.setFirstName(scanner.nextLine());
-                        fresher.setLastName(scanner.nextLine());
-                        fresher.setBirthDate(Integer.parseInt(scanner.nextLine()));
-                        fresher.setAddress(scanner.nextLine());
-                        fresher.setPhone(Integer.parseInt(scanner.nextLine()));
-                        fresher.setEmail(scanner.nextLine());
-                        fresher.setCandidate(Integer.parseInt(scanner.nextLine()));
+                        personManager.personCommon(fresher);
                         fresher.setGraduationDate(Integer.parseInt(scanner.nextLine()));
                         fresher.setGraduationRank(scanner.nextLine());
                         fresher.setEducation(scanner.nextLine());
@@ -76,17 +60,9 @@ public class PersonController {
                     break;
                 case 3:
                     do {
-                        Intern intern = new Intern();
                         System.out.println("We will start to create Internship Candidate.\n" +
                                 "Enter id, firstName, lastName, birthDate, address, phone, email, candidate, majors, semester, universityName: ");
-                        intern.setId(Integer.parseInt(scanner.nextLine()));
-                        intern.setFirstName(scanner.nextLine());
-                        intern.setLastName(scanner.nextLine());
-                        intern.setBirthDate(Integer.parseInt(scanner.nextLine()));
-                        intern.setAddress(scanner.nextLine());
-                        intern.setPhone(Integer.parseInt(scanner.nextLine()));
-                        intern.setEmail(scanner.nextLine());
-                        intern.setCandidate(Integer.parseInt(scanner.nextLine()));
+                        personManager.personCommon(intern);
                         intern.setMajors(scanner.nextLine());
                         intern.setSemester(scanner.nextLine());
                         intern.setUniversityName(scanner.nextLine());

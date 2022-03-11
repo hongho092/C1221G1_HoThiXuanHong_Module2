@@ -2,6 +2,7 @@ package collection_review;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class PersonManager {
     private List<Experience> experiences = new ArrayList<>();
@@ -73,4 +74,17 @@ public class PersonManager {
     public void addIntern(Intern intern) {
         interns.add(intern);
     }
+
+    Scanner scanner = new Scanner(System.in);
+    public void personCommon(Person person) {
+        person.setId(Integer.parseInt(scanner.nextLine()));
+        person.setFirstName(scanner.nextLine());
+        person.setLastName(scanner.nextLine());
+        person.setBirthDate(Integer.parseInt(scanner.nextLine()));
+        person.setAddress(scanner.nextLine());
+        person.setPhone(Integer.parseInt(scanner.nextLine()));
+        person.setEmail(scanner.nextLine());
+        person.setCandidate(Integer.parseInt(scanner.nextLine()));
+    }
+
 }

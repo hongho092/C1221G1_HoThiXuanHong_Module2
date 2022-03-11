@@ -1,5 +1,7 @@
 package collection_review;
 
+import java.util.Scanner;
+
 public abstract class Person {
     protected int id;
     protected String firstName;
@@ -101,5 +103,7 @@ public abstract class Person {
                 ", candidate='" + candidate + '\'' +
                 '}';
     }
+//    Scanner scanner = new Scanner(System.in);
+
 }
 //Id, First Name, Last Name, Birth Date, Address, Phone, Email and Candidate type
