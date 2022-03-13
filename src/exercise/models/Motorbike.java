@@ -1,6 +1,6 @@
-package exercise;
+package exercise.models;
 
-public class Motorbike extends Vehicles{
+public class Motorbike extends Vehicles {
     protected  int congSuat;
 
     public Motorbike() {
@@ -24,6 +24,10 @@ public class Motorbike extends Vehicles{
         return "Motorbike{" +
                 "congSuat=" + congSuat +", "+ super.toString()+
                 '}';
+    }
+
+    public String getInfoMotorbikrToCSV() {
+        return this.bienKiemSoat+","+this.hangSanXuat+","+this.namSanXuat+","+this.chuSoHuu+","+this.congSuat;
     }
 
 }

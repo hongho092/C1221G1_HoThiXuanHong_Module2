@@ -1,6 +1,6 @@
-package exercise;
+package exercise.models;
 
-public class Truck extends Vehicles{
+public class Truck extends Vehicles {
     protected int trongTai;
 
     public Truck() {
@@ -24,5 +24,9 @@ public class Truck extends Vehicles{
         return "Truck{" +
                 "trongTai=" + trongTai+", " +super.toString()+
                 '}';
+    }
+
+    public String getInfoTruckToCSV() {
+        return this.bienKiemSoat+","+this.hangSanXuat+","+this.namSanXuat+","+this.chuSoHuu+","+this.trongTai;
     }
 }

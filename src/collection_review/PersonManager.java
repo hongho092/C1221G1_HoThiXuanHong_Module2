@@ -76,6 +76,7 @@ public class PersonManager {
     }
 
     Scanner scanner = new Scanner(System.in);
+
     public void personCommon(Person person) {
         person.setId(Integer.parseInt(scanner.nextLine()));
         person.setFirstName(scanner.nextLine());

@@ -1,4 +1,4 @@
-package exercise;
+package exercise.models;
 
 import java.util.Scanner;
 

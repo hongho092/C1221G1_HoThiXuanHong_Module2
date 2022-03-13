@@ -1,10 +1,18 @@
-package exercise;
+package exercise.controller;
 
-import java.util.ArrayList;
+import exercise.models.Car;
+import exercise.models.Truck;
+import exercise.services.CarServicesIplm;
+import exercise.services.MotorbikeServicesIplm;
+import exercise.services.TruckServicesIplm;
+//import exercise.services.VehiclesManager;
+
 import java.util.Scanner;
 
 public class VehiclesTest {
-    static VehiclesManager vehiclesManager = new VehiclesManager();
+    static CarServicesIplm car = new CarServicesIplm();
+    static MotorbikeServicesIplm motorbike = new MotorbikeServicesIplm();
+    static TruckServicesIplm truck = new TruckServicesIplm();
 
     public static void main(String[] args) {
         Scanner sca = new Scanner(System.in);
@@ -27,13 +35,13 @@ public class VehiclesTest {
                     int choice1 = Integer.parseInt(sca.nextLine());
                     switch (choice1) {
                         case 1:
-                            vehiclesManager.addTruck();
+                            truck.add();
                             break;
                         case 2:
-                            vehiclesManager.addCar();
+                            car.add();
                             break;
                         case 3:
-                            vehiclesManager.addMotorbike();
+                            motorbike.add();
                             break;
                     }
                     out = false;
@@ -47,13 +55,13 @@ public class VehiclesTest {
                     int choice2 = Integer.parseInt(sca.nextLine());
                     switch (choice2) {
                         case 1:
-                            vehiclesManager.showListProductTruck();
+                            truck.show();
                             break;
                         case 2:
-                            vehiclesManager.showListProductCar();
+                            car.show();
                             break;
                         case 3:
-                            vehiclesManager.showListProductMotorbike();
+                            motorbike.show();
                             break;
                     }
                     out = false;
@@ -67,19 +75,23 @@ public class VehiclesTest {
                     int choice3 = Integer.parseInt(sca.nextLine());
                     switch (choice3) {
                         case 1:
-                            vehiclesManager.deleteTruck();
+                            truck.delete();
                             break;
                         case 2:
-                            vehiclesManager.deleteCar();
+                            car.delete();
                             break;
                         case 3:
-                            vehiclesManager.deleteMotorbike();
-                            break;
+                            motorbike.delete();
+                          break;
                     }
                     out = false;
                     break;
+                case 4:
+                    System.out.println("Hoàn tất nhiệm vụ.");
+                    out = true;
+                    break;
                 default:
-                    System.out.println("Hoàn tất nhiệm vụ");
+                    System.out.println("Nhập sai thao tác");
                     out = true;
             }
         }
