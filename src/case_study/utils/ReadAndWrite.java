@@ -7,10 +7,7 @@ import exercise.models.Motorbike;
 import exercise.models.Truck;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class ReadAndWrite {
     static final String BOOKING_FILE = "src/case_study/data/booking.csv";
@@ -71,12 +68,31 @@ public class ReadAndWrite {
         writeStringListToCSV(stringList,EMPLOYEE_FILE,append);
     }
 
-    public static void  writeHouseListToCSV(LinkedHashMap<House, Integer> houseList, Boolean append){
-        List<String> stringList = new ArrayList<>();
-        for (House h : houseList) {
-            stringList.add(h.getInfoHouseToCSV());
+    private static void  writeLinkedHashMapToCSV(Map<Facility, Integer> facilityIntegerMap, String pathFile, Boolean append){
+        File file = new File(pathFile);
+        FileWriter fileWriter = null;
+        BufferedWriter bufferedWriter = null;
+        try {
+            fileWriter = new FileWriter(file,append); // true ghi tiếp; false (mặc đinh): nghi đè
+            bufferedWriter= new BufferedWriter(fileWriter);
+            for (Map.Entry<Facility, Integer> entry : facilityIntegerMap.entrySet()) {
+                bufferedWriter.write(String.valueOf(entry));
+                bufferedWriter.newLine();
+            }
+            bufferedWriter.close();
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        writeStringListToCSV(stringList,HOUSE_FILE,append);
+    }
+
+    public static void  writeHouseListToCSV(LinkedHashMap<House, Integer> houseList, Boolean append){
+        Map<Facility, Integer> houseIntegerMap = new LinkedHashMap<>();
+        for (Map.Entry<House, Integer> entry : houseList.entrySet()) {
+            houseIntegerMap.put((House) entry, 0);
+        }
+        writeLinkedHashMapToCSV(houseIntegerMap, HOUSE_FILE, append);
+//        writeStringListToCSV(stringList,HOUSE_FILE,append);
     }
 
     public static void  writeRoomListToCSV(List<Room> roomList, Boolean append){

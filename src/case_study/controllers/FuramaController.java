@@ -90,6 +90,7 @@ public class FuramaController {
                                 case 1:
                                     break;
                                 case 2:
+                                    facilityService.addHouse();
                                     break;
                                 case 3:
                                     break;
