@@ -1,8 +1,8 @@
 package case_study.controllers;
 
-import case_study.services.CustomerServiceImpl;
-import case_study.services.EmployeeServiceImpl;
-import case_study.services.FacilityServiceImpl;
+import case_study.services.Iplm.CustomerServiceImpl;
+import case_study.services.Iplm.EmployeeServiceImpl;
+import case_study.services.Iplm.FacilityServiceImpl;
 
 import java.util.Scanner;
 
@@ -88,11 +88,13 @@ public class FuramaController {
                             int choice6 = Integer.parseInt(sca.nextLine());
                             switch (choice6) {
                                 case 1:
+                                    facilityService.addVilla();
                                     break;
                                 case 2:
                                     facilityService.addHouse();
                                     break;
                                 case 3:
+                                    facilityService.addRoom();
                                     break;
                                 default:
                                     System.out.println("Return main menu");
@@ -155,9 +157,5 @@ public class FuramaController {
                     out = false;
             }
         }
-    }
-
-    public static void main(String[] args) {
-        displayMainMenu();
     }
 }

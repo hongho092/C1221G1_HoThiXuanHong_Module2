@@ -1,10 +1,11 @@
 package case_study.utils;
 
 import case_study.models.*;
-import exercise.models.Brand;
-import exercise.models.Car;
-import exercise.models.Motorbike;
-import exercise.models.Truck;
+import case_study.models.facility.House;
+import case_study.models.facility.Room;
+import case_study.models.facility.Villa;
+import case_study.models.person.Customer;
+import case_study.models.person.Employee;
 
 import java.io.*;
 import java.util.*;
@@ -68,15 +69,34 @@ public class ReadAndWrite {
         writeStringListToCSV(stringList,EMPLOYEE_FILE,append);
     }
 
-    private static void  writeLinkedHashMapToCSV(Map<Facility, Integer> facilityIntegerMap, String pathFile, Boolean append){
-        File file = new File(pathFile);
-        FileWriter fileWriter = null;
-        BufferedWriter bufferedWriter = null;
+//    private static void  writeLinkedHashMapToCSV(Map<Facility, Integer> facilityIntegerMap, String pathFile, Boolean append){
+//        File file = new File(pathFile);
+//        FileWriter fileWriter = null;
+//        BufferedWriter bufferedWriter = null;
+//        try {
+//            fileWriter = new FileWriter(file,append); // true ghi tiếp; false (mặc đinh): nghi đè
+//            bufferedWriter= new BufferedWriter(fileWriter);
+//            for (Map.Entry<Facility, Integer> entry : facilityIntegerMap.entrySet()) {
+//                bufferedWriter.write(String.valueOf(entry));
+//                bufferedWriter.newLine();
+//            }
+//            bufferedWriter.close();
+//            fileWriter.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
+
+    public static void  writeHouseListToCSV(Map<House, Integer> map, Boolean append){
+        File file = new File(HOUSE_FILE);
+        FileWriter fileWriter=null;
+        BufferedWriter bufferedWriter=null;
         try {
             fileWriter = new FileWriter(file,append); // true ghi tiếp; false (mặc đinh): nghi đè
             bufferedWriter= new BufferedWriter(fileWriter);
-            for (Map.Entry<Facility, Integer> entry : facilityIntegerMap.entrySet()) {
-                bufferedWriter.write(String.valueOf(entry));
+            for (Map.Entry<House, Integer> h: map.entrySet()) {
+//                bufferedWriter.write(String.valueOf(s));
+                bufferedWriter.write(String.valueOf(h));
                 bufferedWriter.newLine();
             }
             bufferedWriter.close();
@@ -86,29 +106,49 @@ public class ReadAndWrite {
         }
     }
 
-    public static void  writeHouseListToCSV(LinkedHashMap<House, Integer> houseList, Boolean append){
-        Map<Facility, Integer> houseIntegerMap = new LinkedHashMap<>();
-        for (Map.Entry<House, Integer> entry : houseList.entrySet()) {
-            houseIntegerMap.put((House) entry, 0);
+//    public static void  writeHouseListToCSV(LinkedHashMap<House, Integer> houseList, Boolean append){
+//        Map<Facility,Integer> facilityIntegerMap = new LinkedHashMap<>();
+//        for (Map.Entry<House, Integer> entry : houseList.entrySet()) {
+//            facilityIntegerMap.put((House) entry, 0);
+//        }
+//        writeLinkedHashMapToCSV(facilityIntegerMap, HOUSE_FILE, append);
+////        writeStringListToCSV(stringList,HOUSE_FILE,append);
+//    }
+
+    public static void  writeRoomListToCSV(Map<Room, Integer> map, Boolean append){
+        File file = new File(ROOM_FILE);
+        FileWriter fileWriter=null;
+        BufferedWriter bufferedWriter=null;
+        try {
+            fileWriter = new FileWriter(file,append); // true ghi tiếp; false (mặc đinh): nghi đè
+            bufferedWriter= new BufferedWriter(fileWriter);
+            for (Map.Entry<Room, Integer> v: map.entrySet()) {
+                bufferedWriter.write(String.valueOf(v));
+                bufferedWriter.newLine();
+            }
+            bufferedWriter.close();
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        writeLinkedHashMapToCSV(houseIntegerMap, HOUSE_FILE, append);
-//        writeStringListToCSV(stringList,HOUSE_FILE,append);
     }
 
-    public static void  writeRoomListToCSV(List<Room> roomList, Boolean append){
-        List<String> stringList = new ArrayList<>();
-        for (Room r : roomList) {
-            stringList.add(r.getInfoRoomToCSV());
+    public static void  writeVillaListToCSV(Map<Villa, Integer> map, Boolean append){
+        File file = new File(VILLA_FILE);
+        FileWriter fileWriter=null;
+        BufferedWriter bufferedWriter=null;
+        try {
+            fileWriter = new FileWriter(file,append); // true ghi tiếp; false (mặc đinh): nghi đè
+            bufferedWriter= new BufferedWriter(fileWriter);
+            for (Map.Entry<Villa, Integer> v: map.entrySet()) {
+                bufferedWriter.write(String.valueOf(v));
+                bufferedWriter.newLine();
+            }
+            bufferedWriter.close();
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        writeStringListToCSV(stringList,ROOM_FILE,append);
-    }
-
-    public static void  writeVillaListToCSV(List<Villa> villaList, Boolean append){
-        List<String> stringList = new ArrayList<>();
-        for (Villa v : villaList) {
-            stringList.add(v.getInfoVillaToCSV());
-        }
-        writeStringListToCSV(stringList,VILLA_FILE,append);
     }
 
     public static List<Booking> readBookingListFromCSV(){
@@ -169,7 +209,7 @@ public class ReadAndWrite {
             String[] arr = null;
             while ((line=bufferedReader.readLine())!=null){
                 arr = line.split(",");
-                Customer customer = new Customer(arr[0],Integer.parseInt(arr[1]),arr[2],Integer.parseInt(arr[3]),arr[4],Integer.parseInt(arr[5]),arr[6],arr[7]);
+                Customer customer = new Customer(Integer.parseInt(arr[0]),arr[1],arr[2],arr[3],Integer.parseInt(arr[4]),arr[5],Integer.parseInt(arr[6]),arr[7],arr[8]);
                 customerList.add(customer);
             }
             bufferedReader.close();
@@ -192,7 +232,7 @@ public class ReadAndWrite {
             String[] arr = null;
             while ((line=bufferedReader.readLine())!=null){
                 arr = line.split(",");
-                Employee employee = new Employee(arr[0],Integer.parseInt(arr[1]),arr[2],Integer.parseInt(arr[3]),arr[4],Integer.parseInt(arr[5]),arr[6],arr[7],Integer.parseInt(arr[8]),Integer.parseInt(arr[9]));
+                Employee employee = new Employee(Integer.parseInt(arr[0]),arr[1],arr[2],arr[3],Integer.parseInt(arr[4]),arr[5],Integer.parseInt(arr[6]),arr[7],arr[8],Integer.parseInt(arr[9]),Integer.parseInt(arr[10]));
                 employeeList.add(employee);
             }
             bufferedReader.close();
@@ -203,72 +243,57 @@ public class ReadAndWrite {
         return employeeList;
     }
 
-    public static List<House> readHouseListFromCSV(){
-        List<House> houseList = (List<House>) new LinkedHashMap<House, Integer>();
+    public static void readHouseListFromCSV(){
         File file = new File(HOUSE_FILE);
-        FileReader fileReader = null;
-        BufferedReader bufferedReader = null;
+        FileReader fileReader=null;
+        BufferedReader bufferedReader=null;
         try {
             fileReader = new FileReader(file);
             bufferedReader= new BufferedReader(fileReader);
-            String line = null;
-            String[] arr = null;
+            String line=null;
             while ((line=bufferedReader.readLine())!=null){
-                arr = line.split(",");
-                House house = new House(arr[0],Integer.parseInt(arr[1]),Integer.parseInt(arr[2]),Integer.parseInt(arr[3]),arr[4],arr[5]);
-                houseList.add(house);
+                System.out.println(line);
             }
             bufferedReader.close();
             fileReader.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return houseList;
     }
 
-    public static List<Room> readRoomListFromCSV(){
-        List<Room> roomList = new ArrayList<>();
+    public static void readRoomListFromCSV(){
         File file = new File(ROOM_FILE);
-        FileReader fileReader = null;
-        BufferedReader bufferedReader = null;
+        FileReader fileReader=null;
+        BufferedReader bufferedReader=null;
         try {
             fileReader = new FileReader(file);
             bufferedReader= new BufferedReader(fileReader);
-            String line = null;
-            String[] arr = null;
+            String line=null;
             while ((line=bufferedReader.readLine())!=null){
-                arr = line.split(",");
-                Room room = new Room(arr[0],Integer.parseInt(arr[1]),Integer.parseInt(arr[2]),Integer.parseInt(arr[3]),arr[4],arr[5]);
-                roomList.add(room);
+                System.out.println(line);
             }
             bufferedReader.close();
             fileReader.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return roomList;
     }
 
-    public static List<Villa> readVillaListFromCSV(){
-        List<Villa> villaList = new ArrayList<>();
+    public static void readVillaListFromCSV(){
         File file = new File(VILLA_FILE);
-        FileReader fileReader = null;
-        BufferedReader bufferedReader = null;
+        FileReader fileReader=null;
+        BufferedReader bufferedReader=null;
         try {
             fileReader = new FileReader(file);
             bufferedReader= new BufferedReader(fileReader);
-            String line = null;
-            String[] arr = null;
+            String line=null;
             while ((line=bufferedReader.readLine())!=null){
-                arr = line.split(",");
-                Villa villa = new Villa(arr[0],Integer.parseInt(arr[1]),Integer.parseInt(arr[2]),Integer.parseInt(arr[3]),arr[4],arr[5],Integer.parseInt(arr[6]),Integer.parseInt(arr[7]));
-                villaList.add(villa);
+                System.out.println(line);
             }
             bufferedReader.close();
             fileReader.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return villaList;
     }
 }

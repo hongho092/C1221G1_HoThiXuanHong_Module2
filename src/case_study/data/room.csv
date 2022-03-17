@@ -1,0 +1,2 @@
+Room{Facility{maDichVu='SVRO-1234', tenDichVu='Thue phong', dienTichSuDung=45.0, chiPhiThue=2000000.0, soLuongNguoi=3, kieuThue='Thue ngan han'}dichVuKem='An sang'}=0
+Room{Facility{maDichVu='SVRO-3456', tenDichVu='Thue phong', dienTichSuDung=70.0, chiPhiThue=4000000.0, soLuongNguoi=5, kieuThue='Thue dai han'}dichVuKem='Khong co'}=0

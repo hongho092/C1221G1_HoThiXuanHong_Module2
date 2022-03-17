@@ -35,4 +35,8 @@ public class Produce {
                 ", name='" + name + '\'' +
                 '}';
     }
+
+    public String toStringToCSV() {
+        return id+","+name+","+0;
+    }
 }

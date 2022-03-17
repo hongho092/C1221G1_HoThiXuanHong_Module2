@@ -1,0 +1,4 @@
+Produce{id=1, name='fan'}=1
+Produce{id=1, name='chair'}=2
+Produce{id=1, name='table'}=3
+Produce{id=4, name='laptop'}=4

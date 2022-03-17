@@ -12,19 +12,27 @@ public class try_2 {
         produce.put(produce1, 1);
         produce.put(produce2, 2);
         produce.put(produce3, 3);
-        System.out.println(produce);
+//        System.out.println(produce);
 
-        for (Produce p : produce.keySet()) {
-            System.out.println(p);
-        }
+        ReadAndWrite readAndWrite = new ReadAndWrite();
+//        readAndWrite.writeStringListToCSV(produce, "src/try_1/Produce.csv", true);
 
-        for (Integer i : produce.values()) {
-            System.out.println(i);
-        }
+        produce.put(new Produce(4, "laptop"), 4);
+        readAndWrite.writeStringListToCSV(produce,"src/try_1/Produce.csv", false);
 
-        for (Map.Entry<Produce, Integer> entry : produce.entrySet()) {
-            System.out.println(entry);
-        }
+        readAndWrite.readProductFromCSV();
+
+//        for (Produce p : produce.keySet()) {
+//            System.out.println(p);
+//        }
+//
+//        for (Integer i : produce.values()) {
+//            System.out.println(i);
+//        }
+//
+//        for (Map.Entry<Produce, Integer> entry : produce.entrySet()) {
+//            System.out.println(entry);
+//        }
     }
 
 }

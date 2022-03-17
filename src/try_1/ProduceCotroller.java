@@ -12,10 +12,9 @@ public class ProduceCotroller {
 ////            System.out.println(produce);
 ////        }
 //        produceManege.showProduce();
-
         String str1 = "hong";
         String str2 = "ho";
-        String str3 = str1+ str2;
+        String str3 = str1 + str2;
         System.out.println(str3.contains(str1));
         System.out.println(str1.contains(str3));
 
