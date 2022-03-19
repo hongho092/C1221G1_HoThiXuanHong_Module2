@@ -1,8 +1,9 @@
 package ss17_IO_binary_file.thuc_hanh.students;
 
 import java.io.Serializable;
+import java.util.Objects;
 
-public class Student implements Serializable {
+public class Student implements Serializable, Comparable<Student>{
     private int id;
     private String name;
     private String address;
@@ -47,5 +48,24 @@ public class Student implements Serializable {
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        return o.id - this.id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return id == student.id;
+    }
+
+    @Override
+    public int hashCode() {
+//        return Objects.hash(id);
+        return 12;
     }
 }

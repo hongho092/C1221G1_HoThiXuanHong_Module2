@@ -1,7 +1,6 @@
 package case_study.models.person;
 
 public abstract class Person {
-    protected int maSo;
     protected String hoTen;
     protected String ngaySinh;
     protected String gioiTinh;
@@ -12,8 +11,7 @@ public abstract class Person {
     public Person () {
     }
 
-     public Person(int maSo, String hoTen, String ngaySinh, String gioiTinh, long soCMDN, String email, long soDienThoai) {
-         this.maSo = maSo;
+     public Person(String hoTen, String ngaySinh, String gioiTinh, long soCMDN, String email, long soDienThoai) {
          this.hoTen = hoTen;
          this.ngaySinh = ngaySinh;
          this.gioiTinh = gioiTinh;
@@ -21,14 +19,6 @@ public abstract class Person {
          this.email = email;
          this.soDienThoai = soDienThoai;
      }
-
-    public int getMaSo() {
-        return maSo;
-    }
-
-    public void setMaSo(int maSo) {
-        this.maSo = maSo;
-    }
 
     public String getHoTen() {
         return hoTen;
@@ -80,15 +70,12 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "maSo=" + maSo +
-                ", hoTen='" + hoTen + '\'' +
+        return "hoTen='" + hoTen + '\'' +
                 ", ngaySinh='" + ngaySinh + '\'' +
                 ", gioiTinh='" + gioiTinh + '\'' +
                 ", soCMDN=" + soCMDN +
                 ", email='" + email + '\'' +
-                ", soDienThoai=" + soDienThoai +
-                '}';
+                ", soDienThoai=" + soDienThoai +", ";
     }
 }
 

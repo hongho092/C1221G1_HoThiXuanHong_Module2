@@ -16,7 +16,7 @@ public class Room extends Facility {
         this.dichVuKem = dichVuKem;
     }
 
-    public Room(String maDichVu, String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoi, String kieuThue, String dichVuKem) {
+    public Room(String maDichVu, String tenDichVu, int dienTichSuDung, int chiPhiThue, int soLuongNguoi, String kieuThue, String dichVuKem) {
         super(maDichVu, tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoi, kieuThue);
         this.dichVuKem = dichVuKem;
     }
@@ -29,6 +29,6 @@ public class Room extends Facility {
     }
 
     public String getInfoRoomToCSV() {
-        return tenDichVu+","+dienTichSuDung+","+chiPhiThue+","+soLuongNguoi+","+kieuThue+","+dichVuKem;
+        return maDichVu+","+tenDichVu+","+dienTichSuDung+","+chiPhiThue+","+soLuongNguoi+","+kieuThue+","+dichVuKem;
     }
 }

@@ -1,2 +1,1 @@
-House{Facility{maDichVu='SVHO-1234', tenDichVu='Thue nha', dienTichSuDung=34.0, chiPhiThue=3000000.0, soLuongNguoi=5, kieuThue='Thue ngan han'}tieuChuanPhong='Cao cap', soTang=2}=0
-House{Facility{maDichVu='SVHO-2345', tenDichVu='Thue nha', dienTichSuDung=60.0, chiPhiThue=4000000.0, soLuongNguoi=8, kieuThue='Thue ngan han'}tieuChuanPhong='Cao cap', soTang=2}=0
+SVHO-1234,House,35,40000,12,Thue ngan han,Vip,3,0

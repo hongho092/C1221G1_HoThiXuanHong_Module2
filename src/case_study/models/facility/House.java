@@ -9,7 +9,7 @@ public class House extends Facility {
     public House() {
     }
 
-    public House(String maDichVu, String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoi, String kieuThue, String tieuChuanPhong, int soTang) {
+    public House(String maDichVu, String tenDichVu, int dienTichSuDung, int chiPhiThue, int soLuongNguoi, String kieuThue, String tieuChuanPhong, int soTang) {
         super(maDichVu, tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoi, kieuThue);
         this.tieuChuanPhong = tieuChuanPhong;
         this.soTang = soTang;
@@ -40,6 +40,6 @@ public class House extends Facility {
     }
 
     public String getInfoHouseToCSV() {
-        return tenDichVu+","+dienTichSuDung+","+chiPhiThue+","+soLuongNguoi+","+kieuThue+","+tieuChuanPhong;
+        return maDichVu+","+tenDichVu+","+dienTichSuDung+","+chiPhiThue+","+soLuongNguoi+","+kieuThue+","+tieuChuanPhong+","+soTang;
     }
 }

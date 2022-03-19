@@ -1,22 +1,27 @@
 package case_study.models;
 
-public class Booking {
-    protected int maBooking;
-    protected int ngayBatDau;
-    protected int ngayKetThuc;
-    protected int maKhachHang;
-    protected String tenDichVu;
-    protected String loaiDichVu;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.util.Objects;
+
+public class Booking implements Comparable<Booking>{
+    private int maBooking;
+    private String ngayBatDau;
+    private String ngayKetThuc;
+    private int maKhachHang;
+    private String maDichVu;
+    private String loaiDichVu;
 
     public Booking () {
     }
 
-    public Booking(int maBooking, int ngayBatDau, int ngayKetThuc, int maKhachHang, String tenDichVu, String loaiDichVu) {
+    public Booking(int maBooking, String ngayBatDau, String ngayKetThuc, int maKhachHang, String maDichVu, String loaiDichVu) {
         this.maBooking = maBooking;
         this.ngayBatDau = ngayBatDau;
         this.ngayKetThuc = ngayKetThuc;
         this.maKhachHang = maKhachHang;
-        this.tenDichVu = tenDichVu;
+        this.maDichVu = maDichVu;
         this.loaiDichVu = loaiDichVu;
     }
 
@@ -28,19 +33,19 @@ public class Booking {
         this.maBooking = maBooking;
     }
 
-    public int getNgayBatDau() {
+    public String getNgayBatDau() {
         return ngayBatDau;
     }
 
-    public void setNgayBatDau(int ngayBatDau) {
+    public void setNgayBatDau(String ngayBatDau) {
         this.ngayBatDau = ngayBatDau;
     }
 
-    public int getNgayKetThuc() {
+    public String getNgayKetThuc() {
         return ngayKetThuc;
     }
 
-    public void setNgayKetThuc(int ngayKetThuc) {
+    public void setNgayKetThuc(String ngayKetThuc) {
         this.ngayKetThuc = ngayKetThuc;
     }
 
@@ -52,12 +57,12 @@ public class Booking {
         this.maKhachHang = maKhachHang;
     }
 
-    public String getTenDichVu() {
-        return tenDichVu;
+    public String getMaDichVu() {
+        return maDichVu;
     }
 
-    public void setTenDichVu(String tenDichVu) {
-        this.tenDichVu = tenDichVu;
+    public void setMaDichVu(String maDichVu) {
+        this.maDichVu = maDichVu;
     }
 
     public String getLoaiDichVu() {
@@ -75,12 +80,18 @@ public class Booking {
                 ", ngayBatDau=" + ngayBatDau +
                 ", ngayKetThuc=" + ngayKetThuc +
                 ", maKhachHang=" + maKhachHang +
-                ", tenDichVu='" + tenDichVu + '\'' +
+                ", maDichVu='" + maDichVu + '\'' +
                 ", loaiDichVu='" + loaiDichVu + '\'' +
                 '}';
     }
 
     public String getInfoBookingToCSV() {
-        return maBooking+","+ngayBatDau+","+ngayKetThuc+","+maKhachHang+","+tenDichVu+","+loaiDichVu;
+        return maBooking+","+ngayBatDau+","+ngayKetThuc+","+maKhachHang+","+maDichVu+","+loaiDichVu;
+    }
+
+    @Override
+    public int compareTo(Booking o) {
+        return this.getNgayBatDau().compareTo(o.getNgayBatDau());
+//        return o.getNgayBatDau().compareTo(this.getNgayBatDau());
     }
 }

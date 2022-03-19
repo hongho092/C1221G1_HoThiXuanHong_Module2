@@ -1,5 +1,6 @@
 package case_study.controllers;
 
+import case_study.services.Iplm.BookingServiceImpl;
 import case_study.services.Iplm.CustomerServiceImpl;
 import case_study.services.Iplm.EmployeeServiceImpl;
 import case_study.services.Iplm.FacilityServiceImpl;
@@ -10,9 +11,11 @@ public class FuramaController {
     public static EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
     public static CustomerServiceImpl customerService = new CustomerServiceImpl();
     public static FacilityServiceImpl facilityService = new FacilityServiceImpl();
+    public static BookingServiceImpl bookingService = new BookingServiceImpl();
     public static void displayMainMenu() {
         Scanner sca = new Scanner(System.in);
         boolean out = true;
+        int choice;
         while (out) {
             System.out.print("Menu: \n" +
                     "1. Employee Management\n" +
@@ -22,15 +25,21 @@ public class FuramaController {
                     "5. Promotion Management\n" +
                     "6. Exit\n" +
                     "Hãy chọn chức năng -> ");
-            int choice = Integer.parseInt(sca.nextLine());
+            choice = Integer.parseInt(sca.nextLine());
             switch (choice) {
                 case 1:
+                    int choice1 = 0;
                     System.out.print("Menu: \n" +
                             "1. Display list employees\n" +
                             "2. Add new employee\n" +
                             "3. Edit employee\n" +
                             "4. Return main menu\n");
-                    int choice1 = Integer.parseInt(sca.nextLine());
+                    try {
+                        choice1 = Integer.parseInt(sca.nextLine());
+                    } catch (NumberFormatException e) {
+                        System.out.println("Bạn đã nhập sai định dạng số, nhập lại");
+                    }
+//                    int choice1 = Integer.parseInt(sca.nextLine());
                     switch (choice1) {
                         case 1:
                             employeeService.showList();
@@ -118,8 +127,10 @@ public class FuramaController {
                     int choice4 = Integer.parseInt(sca.nextLine());
                     switch (choice4) {
                         case 1:
+                            bookingService.add();
                             break;
                         case 2:
+                            bookingService.showList();
                             break;
                         case 3:
                             break;
@@ -154,7 +165,7 @@ public class FuramaController {
                     break;
                 default:
                     System.out.println("Wrong operation");
-                    out = false;
+                    out = true;
             }
         }
     }

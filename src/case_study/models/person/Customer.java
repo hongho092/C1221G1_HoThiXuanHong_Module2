@@ -5,14 +5,16 @@ import case_study.models.person.Person;
 public class Customer extends Person {
     private String loaiKhach;
     private String diaChi;
+    private int maKhachHang;
 
     public Customer () {
     }
 
-    public Customer(int maSo, String hoTen, String ngaySinh, String gioiTinh, long soCMDN, String email, long soDienThoai, String loaiKhach, String diaChi) {
-        super(maSo, hoTen, ngaySinh, gioiTinh, soCMDN, email, soDienThoai);
+    public Customer(String hoTen, String ngaySinh, String gioiTinh, long soCMDN, String email, long soDienThoai, String loaiKhach, String diaChi, int maKhachHang) {
+        super(hoTen, ngaySinh, gioiTinh, soCMDN, email, soDienThoai);
         this.loaiKhach = loaiKhach;
         this.diaChi = diaChi;
+        this.maKhachHang = maKhachHang;
     }
 
     public String getLoaiKhach() {
@@ -31,16 +33,25 @@ public class Customer extends Person {
         this.diaChi = diaChi;
     }
 
+    public int getMaKhachHang() {
+        return maKhachHang;
+    }
+
+    public void setMaKhachHang(int maKhachHang) {
+        this.maKhachHang = maKhachHang;
+    }
+
     @Override
     public String toString() {
-        return "Customer{" + super.toString()+
+        return "Customer{" + super.toString() +
                 "loaiKhach='" + loaiKhach + '\'' +
                 ", diaChi='" + diaChi + '\'' +
+                ", maKhachHang=" + maKhachHang +
                 '}';
     }
 
     public String getInfoCustomerToCSV() {
-        return maSo+","+hoTen+","+ngaySinh+","+gioiTinh+","+soCMDN+","+email+","+soDienThoai+","+loaiKhach+","+diaChi;
+        return hoTen+","+ngaySinh+","+gioiTinh+","+soCMDN+","+email+","+soDienThoai+","+loaiKhach+","+diaChi+","+maKhachHang;
     }
 }
 //Loại khách, Địa chỉ

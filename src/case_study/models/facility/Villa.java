@@ -10,7 +10,7 @@ public class Villa extends Facility {
     public Villa () {
     }
 
-    public Villa(String maDichVu, String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoi, String kieuThue, String tieuChuanPhong, int dienTichHoBoi, int soTang) {
+    public Villa(String maDichVu, String tenDichVu, int dienTichSuDung, int chiPhiThue, int soLuongNguoi, String kieuThue, String tieuChuanPhong, int dienTichHoBoi, int soTang) {
         super(maDichVu, tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoi, kieuThue);
         this.tieuChuanPhong = tieuChuanPhong;
         this.dienTichHoBoi = dienTichHoBoi;
@@ -51,6 +51,6 @@ public class Villa extends Facility {
     }
 
     public String getInfoVillaToCSV() {
-        return tenDichVu+","+dienTichSuDung+","+chiPhiThue+","+soLuongNguoi+","+kieuThue+","+tieuChuanPhong+","+dienTichHoBoi+","+soTang;
+        return maDichVu+","+tenDichVu+","+dienTichSuDung+","+chiPhiThue+","+soLuongNguoi+","+kieuThue+","+tieuChuanPhong+","+dienTichHoBoi+","+soTang;
     }
 }

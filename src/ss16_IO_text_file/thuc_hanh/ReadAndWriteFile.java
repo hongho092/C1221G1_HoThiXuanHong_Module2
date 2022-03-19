@@ -26,7 +26,8 @@ public class ReadAndWriteFile {
         try {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file, true));
             bufferedWriter.write("Số lớn nhất là: "+max);
-            bufferedWriter.write(" ");
+            bufferedWriter.newLine();
+//            bufferedWriter.write(" ");
             bufferedWriter.close();
         } catch (IOException e) {
             e.printStackTrace();

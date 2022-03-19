@@ -6,15 +6,15 @@ import java.util.concurrent.TimeUnit;
 public abstract class Facility {
     protected String maDichVu;
     protected String tenDichVu;
-    protected double dienTichSuDung;
-    protected double chiPhiThue;
+    protected int dienTichSuDung;
+    protected int chiPhiThue;
     protected int soLuongNguoi;
     protected String kieuThue;
 
     public Facility() {
     }
 
-    public Facility(String maDichVu, String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoi, String kieuThue) {
+    public Facility(String maDichVu, String tenDichVu, int dienTichSuDung, int chiPhiThue, int soLuongNguoi, String kieuThue) {
         this.maDichVu = maDichVu;
         this.tenDichVu = tenDichVu;
         this.dienTichSuDung = dienTichSuDung;
@@ -43,7 +43,7 @@ public abstract class Facility {
         return dienTichSuDung;
     }
 
-    public void setDienTichSuDung(double dienTichSuDung) {
+    public void setDienTichSuDung(int dienTichSuDung) {
         this.dienTichSuDung = dienTichSuDung;
     }
 
@@ -51,7 +51,7 @@ public abstract class Facility {
         return chiPhiThue;
     }
 
-    public void setChiPhiThue(double chiPhiThue) {
+    public void setChiPhiThue(int chiPhiThue) {
         this.chiPhiThue = chiPhiThue;
     }
 
@@ -73,13 +73,11 @@ public abstract class Facility {
 
     @Override
     public String toString() {
-        return "Facility{" +
-                "maDichVu='" + maDichVu + '\'' +
+        return  "maDichVu='" + maDichVu + '\'' +
                 ", tenDichVu='" + tenDichVu + '\'' +
                 ", dienTichSuDung=" + dienTichSuDung +
                 ", chiPhiThue=" + chiPhiThue +
                 ", soLuongNguoi=" + soLuongNguoi +
-                ", kieuThue='" + kieuThue + '\'' +
-                '}';
+                ", kieuThue=" + kieuThue +", ";
     }
 }

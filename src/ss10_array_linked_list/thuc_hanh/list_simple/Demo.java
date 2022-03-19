@@ -1,4 +1,4 @@
-package ss12_java_collection_framework;
+package ss10_array_linked_list.thuc_hanh.list_simple;
 
 import ss10_array_linked_list.thuc_hanh.list_simple.Student;
 
@@ -56,14 +56,14 @@ public class Demo {
 //        }
 
         // tạo hashcode và equals
-        LinkedHashSet<Student> students = new LinkedHashSet<>();
+        Set<Student> students = new LinkedHashSet<>();
         students.add(new Student(1, "Hoa1", "NN"));
         students.add(new Student(2, "Hoa2", "NN"));
         students.add(new Student(4, "Hoa4", "NN"));
         students.add(new Student(3, "Hoa3", "NN"));
         students.add(new Student(4, "Hoa4", "NN"));
 
-        System.out.println(students);
+//        System.out.println(students);
         for (Student student : students) {
             System.out.println(student);
         }

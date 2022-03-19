@@ -18,9 +18,13 @@ public class FacilityServiceImpl implements IFacilityService {
 
     @Override
     public void showList() {
-        ReadAndWrite.readVillaListFromCSV();
-        ReadAndWrite.readHouseListFromCSV();
-        ReadAndWrite.readRoomListFromCSV();
+        Map<Facility, Integer> facilityList = new LinkedHashMap<>();
+        facilityList.putAll(ReadAndWrite.readVillaListFromCSV());
+        facilityList.putAll(ReadAndWrite.readHouseListFromCSV());
+        facilityList.putAll(ReadAndWrite.readRoomListFromCSV());
+        for (Map.Entry<Facility, Integer> entry : facilityList.entrySet()) {
+            System.out.println(entry);
+        }
     }
 
     @Override
@@ -46,7 +50,7 @@ public class FacilityServiceImpl implements IFacilityService {
         }
         Map<House, Integer> houseList = new LinkedHashMap<House, Integer>();
         houseList.put(house, 0);
-        ReadAndWrite.writeHouseListToCSV(houseList, true);
+        ReadAndWrite.writeHouseListToCSV((LinkedHashMap<House, Integer>) houseList, true);
         showList();
     }
 
@@ -59,7 +63,7 @@ public class FacilityServiceImpl implements IFacilityService {
         room.setDichVuKem(sca.nextLine());
         Map<Room, Integer> roomList = new LinkedHashMap<>();
         roomList.put(room, 0);
-        ReadAndWrite.writeRoomListToCSV(roomList, true);
+        ReadAndWrite.writeRoomListToCSV((LinkedHashMap<Room, Integer>) roomList, true);
         showList();
     }
 
@@ -88,7 +92,7 @@ public class FacilityServiceImpl implements IFacilityService {
         }
         Map<Villa, Integer> villaList = new LinkedHashMap<>();
         villaList.put(villa, 0);
-        ReadAndWrite.writeVillaListToCSV(villaList, true);
+        ReadAndWrite.writeVillaListToCSV((LinkedHashMap<Villa, Integer>) villaList, true);
         showList();
     }
 

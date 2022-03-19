@@ -2,7 +2,7 @@ package ss10_array_linked_list.thuc_hanh.list_simple;
 
 import java.util.Objects;
 
-public class Student {
+public class Student implements Comparable<Student>{
     public int id;
     public String name;
     public String nameSchool;
@@ -58,4 +58,8 @@ public class Student {
                 this.name.equals(student.name);
     }
 
+    @Override
+    public int compareTo(Student o) {
+        return this.getName().compareTo(o.getName());
+    }
 }
