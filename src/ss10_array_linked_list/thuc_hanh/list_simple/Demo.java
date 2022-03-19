@@ -8,7 +8,7 @@ public class Demo {
 //    public static class Student {
 //        private i
 //    }
-//    public static void main(String[] args) {
+    public static void main(String[] args) {
 //        Map<Integer, String> hashMap = new HashMap<>();
 //        hashMap.put(1, "Cơ sở lập trình");
 //        hashMap.put(2, "C++");
@@ -56,16 +56,16 @@ public class Demo {
 //        }
 
         // tạo hashcode và equals
-//        LinkedHashSet<Student> students = new LinkedHashSet<>();
-//        students.add(new Student(1, "Hoa1", "NN"));
-//        students.add(new Student(2, "Hoa2", "NN"));
-//        students.add(new Student(4, "Hoa4", "NN"));
-//        students.add(new Student(3, "Hoa3", "NN"));
-//        students.add(new Student(4, "Hoa44", "NN"));
-//
-//        System.out.println(students);
-//        for (Student student : students) {
-//            System.out.println(student);
-//        }
-//    }
+        LinkedHashSet<Student> students = new LinkedHashSet<>();
+        students.add(new Student(1, "Hoa1", "NN"));
+        students.add(new Student(2, "Hoa2", "NN"));
+        students.add(new Student(4, "Hoa4", "NN"));
+        students.add(new Student(3, "Hoa3", "NN"));
+        students.add(new Student(4, "Hoa4", "NN"));
+
+        System.out.println(students);
+        for (Student student : students) {
+            System.out.println(student);
+        }
+    }
 }
