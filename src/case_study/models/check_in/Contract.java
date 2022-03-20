@@ -1,4 +1,4 @@
-package case_study.models;
+package case_study.models.check_in;
 
 public class Contract {
     protected int soHopDong;

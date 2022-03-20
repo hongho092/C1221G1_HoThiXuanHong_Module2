@@ -10,7 +10,7 @@ public class Customer extends Person {
     public Customer () {
     }
 
-    public Customer(String hoTen, String ngaySinh, String gioiTinh, long soCMDN, String email, long soDienThoai, String loaiKhach, String diaChi, int maKhachHang) {
+    public Customer(String hoTen, String ngaySinh, String gioiTinh, long soCMDN, String email, String soDienThoai, String loaiKhach, String diaChi, int maKhachHang) {
         super(hoTen, ngaySinh, gioiTinh, soCMDN, email, soDienThoai);
         this.loaiKhach = loaiKhach;
         this.diaChi = diaChi;
@@ -51,7 +51,7 @@ public class Customer extends Person {
     }
 
     public String getInfoCustomerToCSV() {
-        return hoTen+","+ngaySinh+","+gioiTinh+","+soCMDN+","+email+","+soDienThoai+","+loaiKhach+","+diaChi+","+maKhachHang;
+        return super.getInfoToCSV()+","+loaiKhach+","+diaChi+","+maKhachHang;
     }
 }
 //Loại khách, Địa chỉ

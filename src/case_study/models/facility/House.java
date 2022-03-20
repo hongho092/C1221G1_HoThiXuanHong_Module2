@@ -40,6 +40,6 @@ public class House extends Facility {
     }
 
     public String getInfoHouseToCSV() {
-        return maDichVu+","+tenDichVu+","+dienTichSuDung+","+chiPhiThue+","+soLuongNguoi+","+kieuThue+","+tieuChuanPhong+","+soTang;
+        return super.getInfoToCSV()+","+tieuChuanPhong+","+soTang;
     }
 }

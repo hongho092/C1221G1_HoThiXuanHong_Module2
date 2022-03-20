@@ -1,6 +1,6 @@
-package case_study.services.Iplm;
+package case_study.services.Iplm.check_in_iplm;
 
-import case_study.services.IContactService;
+import case_study.services.interface_service.IContactService;
 
 public class ContactServiceImpl implements IContactService {
     @Override

@@ -56,11 +56,11 @@ public class Demo {
 //        }
 
         // tạo hashcode và equals
-        Set<Student> students = new LinkedHashSet<>();
+        Set<Student> students = new TreeSet<>();
         students.add(new Student(1, "Hoa1", "NN"));
-        students.add(new Student(2, "Hoa2", "NN"));
+        students.add(new Student(2, "Hoa4", "NN"));
         students.add(new Student(4, "Hoa4", "NN"));
-        students.add(new Student(3, "Hoa3", "NN"));
+        students.add(new Student(3, "Hoa4", "NN"));
         students.add(new Student(4, "Hoa4", "NN"));
 
 //        System.out.println(students);

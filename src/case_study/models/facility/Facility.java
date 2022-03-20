@@ -80,4 +80,8 @@ public abstract class Facility {
                 ", soLuongNguoi=" + soLuongNguoi +
                 ", kieuThue=" + kieuThue +", ";
     }
+
+    public String getInfoToCSV() {
+        return maDichVu+","+tenDichVu+","+dienTichSuDung+","+chiPhiThue+","+soLuongNguoi+","+kieuThue;
+    }
 }

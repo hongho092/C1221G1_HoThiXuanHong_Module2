@@ -11,7 +11,7 @@ public class Employee extends Person {
     public Employee () {
     }
 
-    public Employee(String hoTen, String ngaySinh, String gioiTinh, long soCMDN, String email, long soDienThoai, String trinhDo, String viTri, int luong, int maNhanVien) {
+    public Employee(String hoTen, String ngaySinh, String gioiTinh, long soCMDN, String email, String soDienThoai, String trinhDo, String viTri, int luong, int maNhanVien) {
         super(hoTen, ngaySinh, gioiTinh, soCMDN, email, soDienThoai);
         this.trinhDo = trinhDo;
         this.viTri = viTri;
@@ -62,7 +62,7 @@ public class Employee extends Person {
     }
 
     public String getInfoEmployeeToCSV() {
-        return hoTen+","+ngaySinh+","+gioiTinh+","+soCMDN+","+email+","+soDienThoai+","+trinhDo+","+viTri+","+luong+","+maNhanVien;
+        return super.getInfoToCSV()+","+trinhDo+","+viTri+","+luong+","+maNhanVien;
     }
 }
 ////  Trình độ, Vị trí, lương, Mã nhân viên,

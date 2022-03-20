@@ -29,6 +29,6 @@ public class Room extends Facility {
     }
 
     public String getInfoRoomToCSV() {
-        return maDichVu+","+tenDichVu+","+dienTichSuDung+","+chiPhiThue+","+soLuongNguoi+","+kieuThue+","+dichVuKem;
+        return super.getInfoToCSV()+","+dichVuKem;
     }
 }

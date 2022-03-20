@@ -1,12 +1,12 @@
 package case_study.utils;
 
-import case_study.models.*;
+import case_study.models.check_in.Booking;
+import case_study.models.check_in.Contract;
 import case_study.models.facility.House;
 import case_study.models.facility.Room;
 import case_study.models.facility.Villa;
 import case_study.models.person.Customer;
 import case_study.models.person.Employee;
-import case_study.models.person.Person;
 
 import java.io.*;
 import java.util.*;
@@ -235,7 +235,7 @@ public class ReadAndWrite {
             String[] arr = null;
             while ((line=bufferedReader.readLine())!=null){
                 arr = line.split(",");
-                Customer customer = new Customer(arr[0],arr[1],arr[2],Integer.parseInt(arr[3]),arr[4],Integer.parseInt(arr[5]),arr[6],arr[7],Integer.parseInt(arr[8]));
+                Customer customer = new Customer(arr[0],arr[1],arr[2],Integer.parseInt(arr[3]),arr[4],arr[5],arr[6],arr[7],Integer.parseInt(arr[8]));
                 customerList.add(customer);
             }
             bufferedReader.close();
@@ -259,7 +259,7 @@ public class ReadAndWrite {
             String[] arr = null;
             while ((line=bufferedReader.readLine())!=null){
                 arr = line.split(",");
-                Employee employee = new Employee(arr[0],arr[1],arr[2],Integer.parseInt(arr[3]),arr[4],Integer.parseInt(arr[5]),arr[6],arr[7],Integer.parseInt(arr[8]),Integer.parseInt(arr[9]));
+                Employee employee = new Employee(arr[0],arr[1],arr[2],Integer.parseInt(arr[3]),arr[4],arr[5],arr[6],arr[7],Integer.parseInt(arr[8]),Integer.parseInt(arr[9]));
                 employeeList.add(employee);
             }
             bufferedReader.close();

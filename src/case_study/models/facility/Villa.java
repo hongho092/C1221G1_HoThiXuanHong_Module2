@@ -51,6 +51,6 @@ public class Villa extends Facility {
     }
 
     public String getInfoVillaToCSV() {
-        return maDichVu+","+tenDichVu+","+dienTichSuDung+","+chiPhiThue+","+soLuongNguoi+","+kieuThue+","+tieuChuanPhong+","+dienTichHoBoi+","+soTang;
+        return super.getInfoToCSV()+","+tieuChuanPhong+","+dienTichHoBoi+","+soTang;
     }
 }

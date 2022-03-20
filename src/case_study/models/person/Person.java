@@ -6,12 +6,12 @@ public abstract class Person {
     protected String gioiTinh;
     protected long soCMDN;
     protected String email;
-    protected long soDienThoai;
+    protected String soDienThoai;
 
     public Person () {
     }
 
-     public Person(String hoTen, String ngaySinh, String gioiTinh, long soCMDN, String email, long soDienThoai) {
+     public Person(String hoTen, String ngaySinh, String gioiTinh, long soCMDN, String email, String soDienThoai) {
          this.hoTen = hoTen;
          this.ngaySinh = ngaySinh;
          this.gioiTinh = gioiTinh;
@@ -60,11 +60,11 @@ public abstract class Person {
         this.email = email;
     }
 
-    public long getSoDienThoai() {
+    public String getSoDienThoai() {
         return soDienThoai;
     }
 
-    public void setSoDienThoai(long soDienThoai) {
+    public void setSoDienThoai(String soDienThoai) {
         this.soDienThoai = soDienThoai;
     }
 
@@ -76,6 +76,10 @@ public abstract class Person {
                 ", soCMDN=" + soCMDN +
                 ", email='" + email + '\'' +
                 ", soDienThoai=" + soDienThoai +", ";
+    }
+
+    public String getInfoToCSV() {
+        return hoTen+","+ngaySinh+","+gioiTinh+","+soCMDN+","+email+","+soDienThoai;
     }
 }
 

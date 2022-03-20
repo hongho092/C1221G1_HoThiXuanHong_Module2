@@ -46,17 +46,17 @@ public class Student implements Comparable<Student>{
                 '}';
     }
 
-    @Override
-    public int hashCode() {
-        return 12;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        Student student = (Student) obj;
-        return this.getId() == student.getId() &&
-                this.name.equals(student.name);
-    }
+//    @Override
+//    public int hashCode() {
+//        return 12;
+//    }
+//
+//    @Override
+//    public boolean equals(Object obj) {
+//        Student student = (Student) obj;
+//        return this.getId() == student.getId() &&
+//                this.name.equals(student.name);
+//    }
 
     @Override
     public int compareTo(Student o) {

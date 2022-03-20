@@ -1,9 +1,9 @@
-package case_study.services.Iplm;
+package case_study.services.Iplm.check_in_iplm;
 
-import case_study.models.Booking;
+import case_study.models.check_in.Booking;
 import case_study.models.facility.Facility;
 import case_study.models.person.Customer;
-import case_study.services.IBookingService;
+import case_study.services.interface_service.IBookingService;
 import case_study.utils.ReadAndWrite;
 import java.util.*;
 
@@ -31,10 +31,6 @@ public class BookingServiceImpl implements IBookingService {
         bookingList.add(booking);
         ReadAndWrite.writeBookingListToCSV( bookingList, true);
         showList();
-    }
-
-    @Override
-    public void edit() {
     }
 
     public int chonMaKhachHang() {

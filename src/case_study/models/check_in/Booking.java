@@ -1,11 +1,8 @@
-package case_study.models;
+package case_study.models.check_in;
 
-import java.time.LocalDate;
-import java.time.Period;
-import java.time.format.DateTimeFormatter;
-import java.util.Objects;
+import case_study.services.Iplm.check_in_iplm.BookingComparator;
 
-public class Booking implements Comparable<Booking>{
+public class Booking extends BookingComparator implements Comparable<Booking>{
     private int maBooking;
     private String ngayBatDau;
     private String ngayKetThuc;

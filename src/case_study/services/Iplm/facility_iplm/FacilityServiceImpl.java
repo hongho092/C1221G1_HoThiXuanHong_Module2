@@ -1,10 +1,10 @@
-package case_study.services.Iplm;
+package case_study.services.Iplm.facility_iplm;
 
 import case_study.models.facility.Facility;
 import case_study.models.facility.House;
 import case_study.models.facility.Room;
 import case_study.models.facility.Villa;
-import case_study.services.IFacilityService;
+import case_study.services.interface_service.IFacilityService;
 import case_study.utils.ReadAndWrite;
 import case_study.utils.Validate;
 
@@ -25,10 +25,6 @@ public class FacilityServiceImpl implements IFacilityService {
         for (Map.Entry<Facility, Integer> entry : facilityList.entrySet()) {
             System.out.println(entry);
         }
-    }
-
-    @Override
-    public void add() {
     }
 
     @Override
@@ -96,11 +92,6 @@ public class FacilityServiceImpl implements IFacilityService {
         showList();
     }
 
-    @Override
-    public void edit() {
-
-    }
-
     public void commonFacility(Facility facility) {
         System.out.print("MaDichVu: ");
         facility.setMaDichVu(sca.nextLine());
@@ -151,4 +142,5 @@ public class FacilityServiceImpl implements IFacilityService {
             facility.setKieuThue(sca.nextLine());
         }
     }
+
 }
