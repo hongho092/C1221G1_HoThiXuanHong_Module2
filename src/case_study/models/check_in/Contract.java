@@ -1,11 +1,11 @@
 package case_study.models.check_in;
 
 public class Contract {
-    protected int soHopDong;
-    protected int maBooking;
-    protected int soTienDatCoc;
-    protected int tongThanhToan;
-    protected int maKhachHang;
+    private int soHopDong;
+    private int maBooking;
+    private int soTienDatCoc;
+    private int tongThanhToan;
+    private int maKhachHang;
 
     public Contract () {
     }

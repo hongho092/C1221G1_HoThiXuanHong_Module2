@@ -176,7 +176,7 @@ public class ReadAndWrite {
 
     // phương thức dùng để đọc Booking
     public static Set<Booking> readBookingListFromCSV(){
-        Set<Booking> bookingList = new TreeSet<>();
+        Set<Booking> bookingList = new TreeSet<>(new BookingComparator());
         File file = new File(BOOKING_FILE);
         FileReader fileReader = null;
         BufferedReader bufferedReader = null;

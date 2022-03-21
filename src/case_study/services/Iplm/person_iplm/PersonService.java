@@ -18,16 +18,8 @@ public class PersonService{
         System.out.print("SoCMND: ");
         person.setSoCMDN(Integer.parseInt(sca.nextLine()));
         System.out.print("Email (.....@gmail.com): ");
-        person.setEmail(sca.nextLine());
-        while (!validate.ValidateEmail(person.getEmail())) {
-            System.out.print("Nhập email sai format, hãy nhập lại: ");
-            person.setEmail(sca.nextLine());
-        }
+        person.setEmail(validate.regexEmail(sca.nextLine()));
         System.out.print("SoDienThoai: ");
-        person.setSoDienThoai(sca.nextLine());
-        while (!validate.ValidatePhoneNumber(person.getSoDienThoai())) {
-            System.out.print("Nhập soDienThoai sai format, hãy nhập lại: ");
-            person.setSoDienThoai(sca.nextLine());
-        }
+        person.setSoDienThoai(validate.regexPhoneNumber(sca.nextLine()));
     }
 }

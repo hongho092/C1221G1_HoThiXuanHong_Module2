@@ -1,5 +1,6 @@
 package case_study.services.Iplm.facility_iplm;
 
+import case_study.models.check_in.Booking;
 import case_study.models.facility.Facility;
 import case_study.models.facility.House;
 import case_study.models.facility.Room;
@@ -11,14 +12,15 @@ import case_study.utils.Validate;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 public class FacilityServiceImpl implements IFacilityService {
     Scanner sca = new Scanner(System.in);
     Validate validate = new Validate();
+    public Map<Facility, Integer> facilityList = new LinkedHashMap<>();
 
     @Override
     public void showList() {
-        Map<Facility, Integer> facilityList = new LinkedHashMap<>();
         facilityList.putAll(ReadAndWrite.readVillaListFromCSV());
         facilityList.putAll(ReadAndWrite.readHouseListFromCSV());
         facilityList.putAll(ReadAndWrite.readRoomListFromCSV());
@@ -33,11 +35,7 @@ public class FacilityServiceImpl implements IFacilityService {
         System.out.println("Nhập maDichVu, tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoi, kieuThue, tieuChuanPhong, soTang: ");
         commonFacility(house);
         System.out.print("TieuChuanPhong: ");
-        house.setTieuChuanPhong(sca.nextLine());
-        while (!validate.ValidateTen(house.getTieuChuanPhong())) {
-            System.out.print("Nhập kieuThue sai format, hãy nhập lại: ");
-            house.setTieuChuanPhong(sca.nextLine());
-        }
+        house.setTieuChuanPhong(validate.regexTen(sca.nextLine()));
         System.out.print("SoTang: ");
         house.setSoTang(Integer.parseInt(sca.nextLine()));
         while (house.getSoTang() < 0) {
@@ -69,11 +67,7 @@ public class FacilityServiceImpl implements IFacilityService {
         System.out.println("Nhập maDichVu, tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoi, kieuThue, tieuChuanPhong, dienTichHoBoi, soTang:");
         commonFacility(villa);
         System.out.print("TieuChuanPhong: ");
-        villa.setTieuChuanPhong(sca.nextLine());
-        while (!validate.ValidateTen(villa.getTieuChuanPhong())) {
-            System.out.print("Nhập TieuChuanPhong sai format, hãy nhập lại: ");
-            villa.setTieuChuanPhong(sca.nextLine());
-        }
+        villa.setTieuChuanPhong(validate.regexTen(sca.nextLine()));
         System.out.print("DienTichHoBoi: ");
         villa.setDienTichHoBoi(Integer.parseInt(sca.nextLine()));
         while (villa.getDienTichHoBoi() < 30) {
@@ -92,31 +86,23 @@ public class FacilityServiceImpl implements IFacilityService {
         showList();
     }
 
+    @Override
+    public void displayMaintain() {
+
+    }
+
     public void commonFacility(Facility facility) {
         System.out.print("MaDichVu: ");
         facility.setMaDichVu(sca.nextLine());
         if (facility instanceof Villa) {
-            while (!validate.ValidateMaVilla(facility.getMaDichVu())) {
-                System.out.print("Nhập maDichVu sai format, hãy nhập lại (SVVL-YYYY): ");
-                facility.setMaDichVu(sca.nextLine());
-            }
+            validate.regexMaVilla(sca.nextLine());
         } else if (facility instanceof House) {
-            while (!validate.ValidateMaHouse(facility.getMaDichVu())) {
-                System.out.print("Nhập maDichVu sai format, hãy nhập lại (SVHO-YYYY): ");
-                facility.setMaDichVu(sca.nextLine());
-            }
+            validate.regexMaHouse(sca.nextLine());
         } else if (facility instanceof Room) {
-            while (!validate.ValidateMaRoom(facility.getMaDichVu())) {
-                System.out.print("Nhập maDichVu sai format, hãy nhập lại (SVRO-YYYY): ");
-                facility.setMaDichVu(sca.nextLine());
-            }
+            validate.regexMaRoom(sca.nextLine());
         }
         System.out.print("TenDichVu: ");
-        facility.setTenDichVu(sca.nextLine());
-        while (!validate.ValidateTen(facility.getTenDichVu())) {
-            System.out.print("Nhập tenDichVu sai format, hãy nhập lại: ");
-            facility.setTenDichVu(sca.nextLine());
-        }
+        facility.setTenDichVu(validate.regexTen(sca.nextLine()));
         System.out.print("DienTichSuDung: ");
         facility.setDienTichSuDung(Integer.parseInt(sca.nextLine()));
         while (facility.getDienTichSuDung() < 30) {
@@ -136,10 +122,18 @@ public class FacilityServiceImpl implements IFacilityService {
             facility.setSoLuongNguoi(Integer.parseInt(sca.nextLine()));
         }
         System.out.print("KieuThue: ");
-        facility.setKieuThue(sca.nextLine());
-        while (!validate.ValidateTen(facility.getKieuThue())) {
-            System.out.print("Nhập kieuThue sai format, hãy nhập lại: ");
-            facility.setKieuThue(sca.nextLine());
+        facility.          setKieuThue(validate.regexTen(sca.nextLine()));
+    }
+
+    public void kiemTraBooking () {
+        showList();
+        Set<Booking> bookings = ReadAndWrite.readBookingListFromCSV();
+        for (Facility f : facilityList.keySet()) {
+            for (Booking booking : bookings) {
+                if (f.getMaDichVu().equals(booking.getMaDichVu())) {
+                    facilityList.get(f)  ;
+                }
+            }
         }
     }
 

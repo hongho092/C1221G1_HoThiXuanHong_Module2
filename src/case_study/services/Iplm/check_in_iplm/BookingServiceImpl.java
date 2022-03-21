@@ -3,15 +3,18 @@ package case_study.services.Iplm.check_in_iplm;
 import case_study.models.check_in.Booking;
 import case_study.models.facility.Facility;
 import case_study.models.person.Customer;
+import case_study.services.Iplm.facility_iplm.FacilityServiceImpl;
 import case_study.services.interface_service.IBookingService;
 import case_study.utils.ReadAndWrite;
 import java.util.*;
 
 public class BookingServiceImpl implements IBookingService {
     Scanner sca = new Scanner(System.in);
+    static Set<Booking> bookingSet = ReadAndWrite.readBookingListFromCSV();
+
     @Override
     public void showList() {
-        Set<Booking> bookingSet = ReadAndWrite.readBookingListFromCSV();
+        System.out.println("Danh sách Booking: ");
         for (Booking b : bookingSet) {
             System.out.println(b);
         }
@@ -33,7 +36,7 @@ public class BookingServiceImpl implements IBookingService {
         showList();
     }
 
-    public int chonMaKhachHang() {
+    protected int chonMaKhachHang() {
         List<Customer> customerList = ReadAndWrite.readCustomerListFromCSV();
         for (int i = 0; i < customerList.size(); i++) {
             System.out.println(i + 1 + " " + customerList.get(i).getMaKhachHang());
@@ -47,13 +50,10 @@ public class BookingServiceImpl implements IBookingService {
         return maKhachHang;
     }
 
-    public String chonMaDichVu() {
+    private String chonMaDichVu() {
+        FacilityServiceImpl facilityService = new FacilityServiceImpl();
         List<String> mangmaDichVu = new ArrayList<>();
-        Map<Facility, Integer> facilityList = new LinkedHashMap<>();
-        facilityList.putAll(ReadAndWrite.readVillaListFromCSV());
-        facilityList.putAll(ReadAndWrite.readHouseListFromCSV());
-        facilityList.putAll(ReadAndWrite.readRoomListFromCSV());
-        for (Facility f : facilityList.keySet()) {
+        for (Facility f : facilityService.facilityList.keySet()) {
             mangmaDichVu.add(f.getMaDichVu());
         }
         for (int i=0; i<mangmaDichVu.size(); i++) {

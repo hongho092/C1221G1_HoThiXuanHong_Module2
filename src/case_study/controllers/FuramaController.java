@@ -1,6 +1,7 @@
 package case_study.controllers;
 
 import case_study.services.Iplm.check_in_iplm.BookingServiceImpl;
+import case_study.services.Iplm.check_in_iplm.ContactServiceImpl;
 import case_study.services.Iplm.person_iplm.CustomerServiceImpl;
 import case_study.services.Iplm.person_iplm.EmployeeServiceImpl;
 import case_study.services.Iplm.facility_iplm.FacilityServiceImpl;
@@ -13,6 +14,7 @@ public class FuramaController {
     public static CustomerServiceImpl customerService = new CustomerServiceImpl();
     public static FacilityServiceImpl facilityService = new FacilityServiceImpl();
     public static BookingServiceImpl bookingService = new BookingServiceImpl();
+    public static ContactServiceImpl contactService = new ContactServiceImpl();
     public static void displayMainMenu() {
         boolean out = false;
         while (!out) {
@@ -28,7 +30,7 @@ public class FuramaController {
             try {
                 choice = Integer.parseInt(sca.nextLine());
             } catch (NumberFormatException e) {
-                System.err.println("Wrong format, enter again.");
+                System.out.println("Wrong format, enter again.");
             }
             switch (choice) {
                 case 1:
@@ -196,10 +198,13 @@ public class FuramaController {
                     bookingService.showList();
                     break;
                 case 3:
+                    contactService.add();
                     break;
                 case 4:
+                    contactService.showList();
                     break;
                 case 5:
+                    contactService.edit();
                     break;
                 case 6:
                     System.out.println("Return main menu"); out = true;

@@ -2,6 +2,8 @@ package case_study.models.facility;
 
 import case_study.models.facility.Facility;
 
+import java.util.Objects;
+
 public class House extends Facility {
     private String tieuChuanPhong;
     private int soTang;

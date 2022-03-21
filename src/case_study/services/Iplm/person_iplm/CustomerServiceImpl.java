@@ -13,9 +13,9 @@ public class CustomerServiceImpl implements ICustomerService {
     Validate validate = new Validate();
     Scanner sca = new Scanner(System.in);
     PersonService personService = new PersonService();
+    static List<Customer> customerList = ReadAndWrite.readCustomerListFromCSV();
     @Override
     public void showList() {
-        List<Customer> customerList = ReadAndWrite.readCustomerListFromCSV();
         System.out.println("Danh sách khách hàng: ");
         for (Customer c : customerList) {
             System.out.println(c);
@@ -41,10 +41,26 @@ public class CustomerServiceImpl implements ICustomerService {
 
     @Override
     public void edit() {
-        List<Customer> customerList = ReadAndWrite.readCustomerListFromCSV();
         showList();
-        System.out.print("Nhập maKhachHang cần sửa -> ");
-        int maKhachHang = Integer.parseInt(sca.nextLine());
+
+        boolean out1 = true;
+        int maKhachHang = -1;
+        do {
+            try {
+                System.out.print("Nhập maKhachHang cần sửa -> ");
+                maKhachHang = Integer.parseInt(sca.nextLine());
+                for (int i=0; i<customerList.size(); i++) {
+                    if (maKhachHang == customerList.get(i).getMaKhachHang()) {
+                        out1 = true;
+                        break;
+                    }
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Đã nhập sai fomat số. ");
+                out1 = false;
+            }
+        } while (!out1);
+
         boolean out = true;
         do {
             System.out.print("1. HoTen\n" +
@@ -79,11 +95,11 @@ public class CustomerServiceImpl implements ICustomerService {
                             break;
                         case 5:
                             System.out.print("Email: ");
-                            customerList.get(i).setEmail(sca.nextLine());
+                            customerList.get(i).setEmail(validate.regexEmail(sca.nextLine()));
                             break;
                         case 6:
                             System.out.print("SoDienThoai: ");
-                            customerList.get(i).setSoDienThoai(sca.nextLine());
+                            customerList.get(i).setSoDienThoai(validate.regexPhoneNumber(sca.nextLine()));
                             break;
                         case 7:
                             System.out.println("LoaiKhach: ");
@@ -98,7 +114,7 @@ public class CustomerServiceImpl implements ICustomerService {
                             customerList.get(i).setMaKhachHang(Integer.parseInt(sca.nextLine()));
                             break;
                         default:
-                            System.out.println("Không có lựa chọn nào: ");
+                            System.out.println("Không có lựa chọn nào ");
                     }
                     System.out.print("Bạn có muốn thoát (Y?N?): ");
                     String ans = sca.nextLine();
@@ -112,7 +128,7 @@ public class CustomerServiceImpl implements ICustomerService {
         showList();
     }
 
-    public String chonLoaiKhach () {
+    private String chonLoaiKhach () {
         String[] loaiKhach = {"Diamond", "Platinium", "Gold", "Silver", "Member"};
         for (int i=0; i< loaiKhach.length; i++) {
             System.out.println(i+1+" "+loaiKhach[i]);

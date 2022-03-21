@@ -1,8 +1,12 @@
 package case_study.models.check_in;
 
-import case_study.services.Iplm.check_in_iplm.BookingComparator;
+import case_study.utils.BookingComparator;
 
-public class Booking extends BookingComparator implements Comparable<Booking>{
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Objects;
+
+public class Booking {
     private int maBooking;
     private String ngayBatDau;
     private String ngayKetThuc;
@@ -87,8 +91,15 @@ public class Booking extends BookingComparator implements Comparable<Booking>{
     }
 
     @Override
-    public int compareTo(Booking o) {
-        return this.getNgayBatDau().compareTo(o.getNgayBatDau());
-//        return o.getNgayBatDau().compareTo(this.getNgayBatDau());
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Booking booking = (Booking) o;
+        return maKhachHang == booking.maKhachHang;
+    }
+
+    @Override
+    public int hashCode() {
+        return 12;
     }
 }

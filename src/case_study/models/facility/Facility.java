@@ -1,6 +1,7 @@
 package case_study.models.facility;
 
 import java.time.*;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 public abstract class Facility {
@@ -83,5 +84,18 @@ public abstract class Facility {
 
     public String getInfoToCSV() {
         return maDichVu+","+tenDichVu+","+dienTichSuDung+","+chiPhiThue+","+soLuongNguoi+","+kieuThue;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Facility facility = (Facility) o;
+        return maDichVu.equals(facility.maDichVu);
+    }
+
+    @Override
+    public int hashCode() {
+        return 12;
     }
 }

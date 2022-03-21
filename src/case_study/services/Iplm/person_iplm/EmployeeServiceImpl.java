@@ -45,8 +45,28 @@ public class EmployeeServiceImpl implements IEmployeeService {
     public void edit() {
         List<Employee> employeeList = ReadAndWrite.readEmployeeListFromCSV();
         showList();
-        System.out.print("Nhập maNhanVien cần sửa -> ");
-        int maNhanVien = Integer.parseInt(sca.nextLine());
+
+        boolean out1 = true;
+        int maNhanVien = -1;
+        do{
+            try{
+                System.out.print("Nhập maNhanVien cần sửa -> ");
+                maNhanVien = Integer.parseInt(sca.nextLine());
+                for (int i=0; i<employeeList.size(); i++) {
+                    if (maNhanVien == employeeList.get(i).getMaNhanVien()) {
+                        out1 = true;
+                        break;
+                    } else {
+                        System.out.print("Không có maNhanVien này.");
+                        out1 = false;
+                    }
+                }
+            }catch (NumberFormatException e) {
+                System.out.print("Đã nhập sai fomat số, nhập lại: ");
+                out1 = false;
+            }
+        } while (!out1);
+
         boolean out = true;
         do {
             System.out.print("1. HoTen\n" +
@@ -118,7 +138,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
         showList();
     }
 
-    public String chonTrinhDo() {
+    private String chonTrinhDo() {
         String[] trinhDo = {"Trung cấp", "Cao đẳng", "Đại học", "Sau đại học"};
         for (int i=0; i< trinhDo.length; i++) {
             System.out.println(i+1 + " " +trinhDo[i]);
@@ -128,7 +148,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
         return trinhDo[choice - 1];
     }
 
-    public String chonViTri() {
+    private String chonViTri() {
         String[] viTri = {"Lễ tân", "Phục vụ", "Chuyên viên", "Giám sát", "Quản lí", "Giám đốc"};
         for (int i=0; i< viTri.length; i++) {
             System.out.println(i+1 +" "+viTri[i]);
