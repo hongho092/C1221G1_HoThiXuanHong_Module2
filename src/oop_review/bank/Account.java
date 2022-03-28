@@ -105,5 +105,13 @@ public class Account {
         }
     }
 
+    public static void main(String[] args) {
+        Scanner sca = new Scanner(System.in);
+        int moneyInAccount = sca.nextInt();
+        Locale localeVN = new Locale("vi", "VN");
+        NumberFormat currencyVN = NumberFormat.getCurrencyInstance(localeVN);
+        String str1 = currencyVN.format(moneyInAccount);
+        System.out.println(str1);
+    }
 
 }

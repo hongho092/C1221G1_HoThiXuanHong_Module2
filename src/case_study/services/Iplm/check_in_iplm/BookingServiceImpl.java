@@ -11,6 +11,7 @@ import java.util.*;
 public class BookingServiceImpl implements IBookingService {
     Scanner sca = new Scanner(System.in);
     static Set<Booking> bookingSet = ReadAndWrite.readBookingListFromCSV();
+    static FacilityServiceImpl facilityService = new FacilityServiceImpl();
 
     @Override
     public void showList() {
@@ -34,6 +35,7 @@ public class BookingServiceImpl implements IBookingService {
         bookingList.add(booking);
         ReadAndWrite.writeBookingListToCSV( bookingList, true);
         showList();
+        facilityService.kiemTraBooking();
     }
 
     protected int chonMaKhachHang() {
@@ -51,9 +53,13 @@ public class BookingServiceImpl implements IBookingService {
     }
 
     private String chonMaDichVu() {
-        FacilityServiceImpl facilityService = new FacilityServiceImpl();
         List<String> mangmaDichVu = new ArrayList<>();
-        for (Facility f : facilityService.facilityList.keySet()) {
+        Map<Facility, Integer> facilityList = new LinkedHashMap<>();
+        System.out.println("Danh sách dịch vụ:");
+        facilityList.putAll(ReadAndWrite.readVillaListFromCSV());
+        facilityList.putAll(ReadAndWrite.readHouseListFromCSV());
+        facilityList.putAll(ReadAndWrite.readRoomListFromCSV());
+        for (Facility f : facilityList.keySet()) {
             mangmaDichVu.add(f.getMaDichVu());
         }
         for (int i=0; i<mangmaDichVu.size(); i++) {

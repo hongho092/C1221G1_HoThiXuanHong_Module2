@@ -136,6 +136,7 @@ public class FuramaController {
                 case 2:
                     displayAddNewFacility(); break;
                 case 3:
+                    facilityService.displayMaintain();
                     break;
                 case 4:
                     System.out.println("Return main menu"); out = true; break;
@@ -207,7 +208,7 @@ public class FuramaController {
                     contactService.edit();
                     break;
                 case 6:
-                    System.out.println("Return main menu"); out = true;
+                    System.out.println("Return main menu"); out = true; break;
                 default:
                     System.out.println("Enter from 1 to 6");
             }

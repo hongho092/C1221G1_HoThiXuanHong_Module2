@@ -17,13 +17,17 @@ import java.util.Set;
 public class FacilityServiceImpl implements IFacilityService {
     Scanner sca = new Scanner(System.in);
     Validate validate = new Validate();
-    public Map<Facility, Integer> facilityList = new LinkedHashMap<>();
+    public static Map<Villa, Integer> villaList = ReadAndWrite.readVillaListFromCSV();
+    public static Map<House, Integer> houseList = ReadAndWrite.readHouseListFromCSV();
+    public static Map<Room, Integer> roomList = ReadAndWrite.readRoomListFromCSV();
 
     @Override
     public void showList() {
-        facilityList.putAll(ReadAndWrite.readVillaListFromCSV());
-        facilityList.putAll(ReadAndWrite.readHouseListFromCSV());
-        facilityList.putAll(ReadAndWrite.readRoomListFromCSV());
+        Map<Facility, Integer> facilityList = new LinkedHashMap<>();
+        System.out.println("Danh sách dịch vụ:");
+        facilityList.putAll(villaList);
+        facilityList.putAll(houseList);
+        facilityList.putAll(roomList);
         for (Map.Entry<Facility, Integer> entry : facilityList.entrySet()) {
             System.out.println(entry);
         }
@@ -42,7 +46,6 @@ public class FacilityServiceImpl implements IFacilityService {
             System.out.print("Số tầng bé hơn 0, hãy nhập lại: ");
             house.setSoTang(Integer.parseInt(sca.nextLine()));
         }
-        Map<House, Integer> houseList = new LinkedHashMap<House, Integer>();
         houseList.put(house, 0);
         ReadAndWrite.writeHouseListToCSV((LinkedHashMap<House, Integer>) houseList, true);
         showList();
@@ -55,7 +58,6 @@ public class FacilityServiceImpl implements IFacilityService {
         commonFacility(room);
         System.out.print("DichVuKem: ");
         room.setDichVuKem(sca.nextLine());
-        Map<Room, Integer> roomList = new LinkedHashMap<>();
         roomList.put(room, 0);
         ReadAndWrite.writeRoomListToCSV((LinkedHashMap<Room, Integer>) roomList, true);
         showList();
@@ -80,7 +82,6 @@ public class FacilityServiceImpl implements IFacilityService {
             System.out.print("Số tầng bé hơn 0, hãy nhập lại: ");
             villa.setSoTang(Integer.parseInt(sca.nextLine()));
         }
-        Map<Villa, Integer> villaList = new LinkedHashMap<>();
         villaList.put(villa, 0);
         ReadAndWrite.writeVillaListToCSV((LinkedHashMap<Villa, Integer>) villaList, true);
         showList();
@@ -88,18 +89,26 @@ public class FacilityServiceImpl implements IFacilityService {
 
     @Override
     public void displayMaintain() {
-
+        Map<Facility, Integer> facilityList = new LinkedHashMap<>();
+        System.out.println("Danh sách dịch vụ:");
+        facilityList.putAll(villaList);
+        facilityList.putAll(houseList);
+        facilityList.putAll(roomList);
+        for (Facility f : facilityList.keySet()) {
+            if ( facilityList.get(f) >= 5) {
+                System.out.println("Đã đến thời gian bảo trì: "+f);
+            }
+        }
     }
 
     public void commonFacility(Facility facility) {
         System.out.print("MaDichVu: ");
-        facility.setMaDichVu(sca.nextLine());
         if (facility instanceof Villa) {
-            validate.regexMaVilla(sca.nextLine());
+            facility.setMaDichVu(validate.regexMaVilla(sca.nextLine()));
         } else if (facility instanceof House) {
-            validate.regexMaHouse(sca.nextLine());
+            facility.setMaDichVu(validate.regexMaHouse(sca.nextLine()));
         } else if (facility instanceof Room) {
-            validate.regexMaRoom(sca.nextLine());
+            facility.setMaDichVu(validate.regexMaRoom(sca.nextLine()));
         }
         System.out.print("TenDichVu: ");
         facility.setTenDichVu(validate.regexTen(sca.nextLine()));
@@ -128,10 +137,35 @@ public class FacilityServiceImpl implements IFacilityService {
     public void kiemTraBooking () {
         showList();
         Set<Booking> bookings = ReadAndWrite.readBookingListFromCSV();
-        for (Facility f : facilityList.keySet()) {
+        for (House h : houseList.keySet()) {
             for (Booking booking : bookings) {
-                if (f.getMaDichVu().equals(booking.getMaDichVu())) {
-                    facilityList.get(f)  ;
+                if(h.getMaDichVu().equals(booking.getMaDichVu())) {
+                    int count = houseList.get(h);
+                    count ++;
+                    houseList.put(h, count);
+                    ReadAndWrite.writeHouseListToCSV((LinkedHashMap<House, Integer>) houseList, false);
+                }
+            }
+        }
+
+        for (Room r : roomList.keySet()) {
+            for (Booking booking : bookings) {
+                if(r.getMaDichVu().equals(booking.getMaDichVu())) {
+                    int count = roomList.get(r);
+                    count ++;
+                    roomList.put(r, count);
+                    ReadAndWrite.writeRoomListToCSV((LinkedHashMap<Room, Integer>) roomList, false);
+                }
+            }
+        }
+
+        for (Villa v : villaList.keySet()) {
+            for (Booking booking : bookings) {
+                if(v.getMaDichVu().equals(booking.getMaDichVu())) {
+                    int count = villaList.get(v);
+                    count ++;
+                    villaList.put(v, count);
+                    ReadAndWrite.writeVillaListToCSV((LinkedHashMap<Villa, Integer>) villaList, false);
                 }
             }
         }

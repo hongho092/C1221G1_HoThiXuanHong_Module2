@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
-public class Booking {
+public class Booking implements Comparable<Booking>{
     private int maBooking;
     private String ngayBatDau;
     private String ngayKetThuc;
@@ -91,15 +91,20 @@ public class Booking {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Booking booking = (Booking) o;
-        return maKhachHang == booking.maKhachHang;
+    public int compareTo(Booking o) {
+        return 0;
     }
 
-    @Override
-    public int hashCode() {
-        return 12;
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Booking booking = (Booking) o;
+//        return maKhachHang == booking.maKhachHang;
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return 12;
+//    }
 }
